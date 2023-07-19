@@ -1,19 +1,19 @@
 jekyll build --incremental
-echo "jekyll build"
+echo "============>jekyll build"
 
-xcopy E:\笔记\image E:\笔记\myblog\_site /S
-echo "xcopy"
+mv /e/笔记/image /e/笔记/myblog/_site/
+echo "============>xcopy"
 
 cd _site
-echo "cd _site"
+echo "============>cd _site"
 
 git add .
-echo "git add"
+echo "============>git add"
 
 git commit -m "update"
-echo "git commit"
+echo "============>git commit"
 
 git push -u origin "master"
-echo "git push"
+echo "============>git push"
 
 
