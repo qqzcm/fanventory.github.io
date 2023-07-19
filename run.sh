@@ -1,7 +1,11 @@
 jekyll build --incremental
 echo "============>jekyll build"
 
+<<<<<<< HEAD
 mv /e/笔记/image /e/笔记/myblog/_site/
+=======
+cp -r /e/笔记/image /e/笔记/myblog/_site/
+>>>>>>> 8913020 (update)
 echo "============>xcopy"
 
 cd _site

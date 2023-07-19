@@ -398,6 +398,7 @@
 </url>
 <url>
 <loc>https://fanventory.github.io/categories/</loc>
+<<<<<<< HEAD
 <lastmod>2023-07-19T20:23:47+08:00</lastmod>
 </url>
 <url>
@@ -411,6 +412,21 @@
 <url>
 <loc>https://fanventory.github.io/about/</loc>
 <lastmod>2023-07-19T20:23:47+08:00</lastmod>
+=======
+<lastmod>2023-07-19T20:34:15+08:00</lastmod>
+</url>
+<url>
+<loc>https://fanventory.github.io/tags/</loc>
+<lastmod>2023-07-19T20:34:15+08:00</lastmod>
+</url>
+<url>
+<loc>https://fanventory.github.io/archives/</loc>
+<lastmod>2023-07-19T20:34:15+08:00</lastmod>
+</url>
+<url>
+<loc>https://fanventory.github.io/about/</loc>
+<lastmod>2023-07-19T20:34:15+08:00</lastmod>
+>>>>>>> 8913020 (update)
 </url>
 <url>
 <loc>https://fanventory.github.io/</loc>
