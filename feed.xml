@@ -1,17 +1,17 @@
 
 
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <id>http://xiabao.top:18888//</id>
+  <id>https://fanventory.github.io/</id>
   <title>Fanventory</title>
   <subtitle>有空的时候随便写点东西.</subtitle>
-  <updated>2023-07-19T18:43:42+08:00</updated>
+  <updated>2023-07-19T20:13:58+08:00</updated>
   <author>
     <name>Fanventory</name>
-    <uri>http://xiabao.top:18888//</uri>
+    <uri>https://fanventory.github.io/</uri>
   </author>
-  <link rel="self" type="application/atom+xml" href="http://xiabao.top:18888//feed.xml"/>
+  <link rel="self" type="application/atom+xml" href="https://fanventory.github.io/feed.xml"/>
   <link rel="alternate" type="text/html" hreflang="en"
-    href="http://xiabao.top:18888//"/>
+    href="https://fanventory.github.io/"/>
   <generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator>
   <rights> © 2023 Fanventory </rights>
   <icon>/assets/img/favicons/favicon.ico</icon>
@@ -20,14 +20,95 @@
 
   
   <entry>
+    <title>读书笔记 —— Github + Jekyll</title>
+    <link href="https://fanventory.github.io/posts/Github+Jekyll/" rel="alternate" type="text/html" title="读书笔记 —— Github + Jekyll" />
+    <published>2023-07-19T15:34:00+08:00</published>
+  
+    <updated>2023-07-19T15:34:00+08:00</updated>
+  
+    <id>https://fanventory.github.io/posts/Github+Jekyll/</id>
+    <content src="https://fanventory.github.io/posts/Github+Jekyll/" />
+    <author>
+      <name>Fanventory</name>
+    </author>
+
+  
+    
+    <category term="other" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      jekyll
+
+  如何使用jekyll和GitHub搭建一个免费博客。
+
+
+
+
+
+创建github账号和仓库
+
+
+  
+    创建github账号
+  
+  
+    建立一个仓库，仓库名是访问地址，一般格式为: XXX.github.io
+  
+
+
+安装ruby环境
+
+
+  下载ruby+Devkit (www.ruby-lang.org)
+  安装 Ruby+Devkit 3.2.2-1(x86).exe
+
+
+安装RubyGems
+
+
+  下载RubyGems (www.ruby-lang.org)
+  解压
+  运行命令
+
+
+# 进入你解压的文件夹
+cd D:\rubyGems\rubygems-3.4.17
+ruby setup.rb
+gem install jekyll
+
+
+创建博客
+
+
+  创建博客模板
+
+
+cd XXX # 进入你放置博客文件的位置
+jekyll n...
+    </summary>
+  
+
+  </entry>
+
+  
+  <entry>
     <title>读书笔记 —— 最大文件描述符数</title>
-    <link href="http://xiabao.top:18888//posts/%E6%9C%80%E5%A4%A7%E6%96%87%E4%BB%B6%E6%8F%8F%E8%BF%B0%E7%AC%A6%E6%95%B0/" rel="alternate" type="text/html" title="读书笔记 —— 最大文件描述符数" />
+    <link href="https://fanventory.github.io/posts/%E6%9C%80%E5%A4%A7%E6%96%87%E4%BB%B6%E6%8F%8F%E8%BF%B0%E7%AC%A6%E6%95%B0/" rel="alternate" type="text/html" title="读书笔记 —— 最大文件描述符数" />
     <published>2023-07-19T14:35:00+08:00</published>
   
     <updated>2023-07-19T14:35:00+08:00</updated>
   
-    <id>http://xiabao.top:18888//posts/%E6%9C%80%E5%A4%A7%E6%96%87%E4%BB%B6%E6%8F%8F%E8%BF%B0%E7%AC%A6%E6%95%B0/</id>
-    <content src="http://xiabao.top:18888//posts/%E6%9C%80%E5%A4%A7%E6%96%87%E4%BB%B6%E6%8F%8F%E8%BF%B0%E7%AC%A6%E6%95%B0/" />
+    <id>https://fanventory.github.io/posts/%E6%9C%80%E5%A4%A7%E6%96%87%E4%BB%B6%E6%8F%8F%E8%BF%B0%E7%AC%A6%E6%95%B0/</id>
+    <content src="https://fanventory.github.io/posts/%E6%9C%80%E5%A4%A7%E6%96%87%E4%BB%B6%E6%8F%8F%E8%BF%B0%E7%AC%A6%E6%95%B0/" />
     <author>
       <name>Fanventory</name>
     </author>
@@ -82,14 +163,14 @@ ulimit -n
 
   
   <entry>
-    <title>读书笔记 —— 进程池和线程池_1</title>
-    <link href="http://xiabao.top:18888//posts/%E8%BF%9B%E7%A8%8B%E6%B1%A0%E5%92%8C%E7%BA%BF%E7%A8%8B%E6%B1%A0_2/" rel="alternate" type="text/html" title="读书笔记 —— 进程池和线程池_1" />
+    <title>读书笔记 —— 进程池和线程池_2</title>
+    <link href="https://fanventory.github.io/posts/%E8%BF%9B%E7%A8%8B%E6%B1%A0%E5%92%8C%E7%BA%BF%E7%A8%8B%E6%B1%A0_2/" rel="alternate" type="text/html" title="读书笔记 —— 进程池和线程池_2" />
     <published>2023-07-19T09:34:00+08:00</published>
   
     <updated>2023-07-19T09:34:00+08:00</updated>
   
-    <id>http://xiabao.top:18888//posts/%E8%BF%9B%E7%A8%8B%E6%B1%A0%E5%92%8C%E7%BA%BF%E7%A8%8B%E6%B1%A0_2/</id>
-    <content src="http://xiabao.top:18888//posts/%E8%BF%9B%E7%A8%8B%E6%B1%A0%E5%92%8C%E7%BA%BF%E7%A8%8B%E6%B1%A0_2/" />
+    <id>https://fanventory.github.io/posts/%E8%BF%9B%E7%A8%8B%E6%B1%A0%E5%92%8C%E7%BA%BF%E7%A8%8B%E6%B1%A0_2/</id>
+    <content src="https://fanventory.github.io/posts/%E8%BF%9B%E7%A8%8B%E6%B1%A0%E5%92%8C%E7%BA%BF%E7%A8%8B%E6%B1%A0_2/" />
     <author>
       <name>Fanventory</name>
     </author>
@@ -110,7 +191,7 @@ ulimit -n
 
 
 
-      进程池概述
+      线程池的实现
 
   本节我们实现了简单的两种线程池模型：基于半同步/半异步模式的线程池、基于半同步/半反应堆模式的线程池。前者可以保证同一个客户连接的所有任务都由一个子进程来处理，后者通过工作队列解除了主线程和工作线程的耦合关系，通用性更高。
 
@@ -129,7 +210,7 @@ ulimit -n
 #include &amp;lt;sys/types.h&amp;gt;
 #include &amp;lt;sys/socket.h&amp;gt;
 #include &amp;lt;netinet/in.h&amp;gt;
-#include &amp;lt;ar...
+#include &amp;lt;a...
     </summary>
   
 
@@ -138,13 +219,13 @@ ulimit -n
   
   <entry>
     <title>读书笔记 —— 进程池和线程池_1</title>
-    <link href="http://xiabao.top:18888//posts/%E8%BF%9B%E7%A8%8B%E6%B1%A0%E5%92%8C%E7%BA%BF%E7%A8%8B%E6%B1%A0_1/" rel="alternate" type="text/html" title="读书笔记 —— 进程池和线程池_1" />
+    <link href="https://fanventory.github.io/posts/%E8%BF%9B%E7%A8%8B%E6%B1%A0%E5%92%8C%E7%BA%BF%E7%A8%8B%E6%B1%A0_1/" rel="alternate" type="text/html" title="读书笔记 —— 进程池和线程池_1" />
     <published>2023-07-18T19:16:00+08:00</published>
   
     <updated>2023-07-18T19:16:00+08:00</updated>
   
-    <id>http://xiabao.top:18888//posts/%E8%BF%9B%E7%A8%8B%E6%B1%A0%E5%92%8C%E7%BA%BF%E7%A8%8B%E6%B1%A0_1/</id>
-    <content src="http://xiabao.top:18888//posts/%E8%BF%9B%E7%A8%8B%E6%B1%A0%E5%92%8C%E7%BA%BF%E7%A8%8B%E6%B1%A0_1/" />
+    <id>https://fanventory.github.io/posts/%E8%BF%9B%E7%A8%8B%E6%B1%A0%E5%92%8C%E7%BA%BF%E7%A8%8B%E6%B1%A0_1/</id>
+    <content src="https://fanventory.github.io/posts/%E8%BF%9B%E7%A8%8B%E6%B1%A0%E5%92%8C%E7%BA%BF%E7%A8%8B%E6%B1%A0_1/" />
     <author>
       <name>Fanventory</name>
     </author>
@@ -188,13 +269,13 @@ ulimit -n
   
   <entry>
     <title>读书笔记 —— 多线程编程_7</title>
-    <link href="http://xiabao.top:18888//posts/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E7%BC%96%E7%A8%8B_7/" rel="alternate" type="text/html" title="读书笔记 —— 多线程编程_7" />
+    <link href="https://fanventory.github.io/posts/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E7%BC%96%E7%A8%8B_7/" rel="alternate" type="text/html" title="读书笔记 —— 多线程编程_7" />
     <published>2023-07-17T14:23:00+08:00</published>
   
     <updated>2023-07-17T14:23:00+08:00</updated>
   
-    <id>http://xiabao.top:18888//posts/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E7%BC%96%E7%A8%8B_7/</id>
-    <content src="http://xiabao.top:18888//posts/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E7%BC%96%E7%A8%8B_7/" />
+    <id>https://fanventory.github.io/posts/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E7%BC%96%E7%A8%8B_7/</id>
+    <content src="https://fanventory.github.io/posts/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E7%BC%96%E7%A8%8B_7/" />
     <author>
       <name>Fanventory</name>
     </author>
@@ -227,66 +308,6 @@ ulimit -n
 
 如果一个函数能被多个线程同时调用而且不发生竞态条件，我们称它是线程安全的(thread safe)，或者说它是可重入函数。
 Linux中只有一小部分函数是不可重入的...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>读书笔记 —— 多线程编程_6</title>
-    <link href="http://xiabao.top:18888//posts/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E7%BC%96%E7%A8%8B_6/" rel="alternate" type="text/html" title="读书笔记 —— 多线程编程_6" />
-    <published>2023-07-17T11:14:00+08:00</published>
-  
-    <updated>2023-07-17T11:14:00+08:00</updated>
-  
-    <id>http://xiabao.top:18888//posts/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E7%BC%96%E7%A8%8B_6/</id>
-    <content src="http://xiabao.top:18888//posts/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E7%BC%96%E7%A8%8B_6/" />
-    <author>
-      <name>Fanventory</name>
-    </author>
-
-  
-    
-    <category term="Reading Notes" />
-    
-    <category term="Linux高性能服务器编程" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      条件变量
-
-  本节介绍了条件变量的相关API，包括初始化条件变量、销毁条件变量、唤醒一个或全部等待条件变量的线程、等待条件变量。
-
-
-
-
-
-条件变量
-
-条件变量提供了一种线程间的通知机制：当某个共享数据达到某个值的时候，唤醒等待这个共享数据的线程。
-对比互斥锁，互斥锁是同步线程对共享数据的访问，而条件变量同步的是线程之间的共享数据的值。
-
-pthread_cond_init
-
-下面是pthread_cond_init函数，功能是初始化条件变量，其定义如下：
-
-#include &amp;lt;pthread.h&amp;gt;
-int pthread_cond_init(pthread_cond_t *cond, const pthread_condattr_t *cond_attr);
-
-
-参数和返回值：
-
-  cond: 目标条件变量
-  cond_attr: 指定条件变量的属性，如果传入NU...
     </summary>
   
 

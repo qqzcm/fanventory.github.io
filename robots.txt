@@ -2,4 +2,4 @@ User-agent: *
 
 Disallow: /norobots/
 
-Sitemap: http://xiabao.top:18888//sitemap.xml
+Sitemap: https://fanventory.github.io/sitemap.xml

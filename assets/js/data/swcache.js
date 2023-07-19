@@ -43,10 +43,8 @@ const resource = [
 const allowedDomains = [
     
 
-    'xiabao.top:18888/',
+    'fanventory.github.io',
 
-    
-        'xiabao.top:18888',
     
 
     'fonts.gstatic.com',
