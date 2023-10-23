@@ -43,7 +43,7 @@ const resource = [
 const allowedDomains = [
     
 
-    'fanventory.github.io',
+    'localhost:4000',
 
     
 

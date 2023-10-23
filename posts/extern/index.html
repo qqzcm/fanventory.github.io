@@ -40,8 +40,8 @@
 <meta property="og:locale" content="en" />
 <meta name="description" content="extern 本文介绍了extern关键字的作用，我们可以分为两种：(1)extern关键字用于声明变量和函数；(2)extern “C”用于指示编译器将代码按照C语言的风格进行编译和连接。接着我们通过例子说明了如何在C++中调用C的代码以及如何在C中调用C++的代码。最后我们需要注意混合使用C和C++时，应该统一地使用函数和函数指针，避免它们两者的编译和连接方式不同。" />
 <meta property="og:description" content="extern 本文介绍了extern关键字的作用，我们可以分为两种：(1)extern关键字用于声明变量和函数；(2)extern “C”用于指示编译器将代码按照C语言的风格进行编译和连接。接着我们通过例子说明了如何在C++中调用C的代码以及如何在C中调用C++的代码。最后我们需要注意混合使用C和C++时，应该统一地使用函数和函数指针，避免它们两者的编译和连接方式不同。" />
-<link rel="canonical" href="https://fanventory.github.io/posts/extern/" />
-<meta property="og:url" content="https://fanventory.github.io/posts/extern/" />
+<link rel="canonical" href="http://localhost:4000/posts/extern/" />
+<meta property="og:url" content="http://localhost:4000/posts/extern/" />
 <meta property="og:site_name" content="Fanventory" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2023-08-03T21:18:00+08:00" />
@@ -49,7 +49,7 @@
 <meta property="twitter:title" content="C++ —— 动态库加载函数" />
 <meta name="twitter:site" content="@Fanventory" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-08-03T21:18:00+08:00","datePublished":"2023-08-03T21:18:00+08:00","description":"extern 本文介绍了extern关键字的作用，我们可以分为两种：(1)extern关键字用于声明变量和函数；(2)extern “C”用于指示编译器将代码按照C语言的风格进行编译和连接。接着我们通过例子说明了如何在C++中调用C的代码以及如何在C中调用C++的代码。最后我们需要注意混合使用C和C++时，应该统一地使用函数和函数指针，避免它们两者的编译和连接方式不同。","headline":"C++ —— 动态库加载函数","mainEntityOfPage":{"@type":"WebPage","@id":"https://fanventory.github.io/posts/extern/"},"url":"https://fanventory.github.io/posts/extern/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-08-03T21:18:00+08:00","datePublished":"2023-08-03T21:18:00+08:00","description":"extern 本文介绍了extern关键字的作用，我们可以分为两种：(1)extern关键字用于声明变量和函数；(2)extern “C”用于指示编译器将代码按照C语言的风格进行编译和连接。接着我们通过例子说明了如何在C++中调用C的代码以及如何在C中调用C++的代码。最后我们需要注意混合使用C和C++时，应该统一地使用函数和函数指针，避免它们两者的编译和连接方式不同。","headline":"C++ —— 动态库加载函数","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/extern/"},"url":"http://localhost:4000/posts/extern/"}</script>
 <!-- End Jekyll SEO tag -->
 
   
@@ -1186,19 +1186,19 @@ void f(char* p,int size)
 
     
       
-        <a href="https://twitter.com/intent/tweet?text=C%2B%2B+%E2%80%94%E2%80%94+%E5%8A%A8%E6%80%81%E5%BA%93%E5%8A%A0%E8%BD%BD%E5%87%BD%E6%95%B0+-+Fanventory&url=https%3A%2F%2Ffanventory.github.io%2Fposts%2Fextern%2F" data-toggle="tooltip" data-placement="top"
+        <a href="https://twitter.com/intent/tweet?text=C%2B%2B+%E2%80%94%E2%80%94+%E5%8A%A8%E6%80%81%E5%BA%93%E5%8A%A0%E8%BD%BD%E5%87%BD%E6%95%B0+-+Fanventory&url=http%3A%2F%2Flocalhost%3A4000%2Fposts%2Fextern%2F" data-toggle="tooltip" data-placement="top"
           title="Twitter" target="_blank" rel="noopener" aria-label="Twitter">
           <i class="fa-fw fab fa-twitter"></i>
         </a>
     
       
-        <a href="https://www.facebook.com/sharer/sharer.php?title=C%2B%2B+%E2%80%94%E2%80%94+%E5%8A%A8%E6%80%81%E5%BA%93%E5%8A%A0%E8%BD%BD%E5%87%BD%E6%95%B0+-+Fanventory&u=https%3A%2F%2Ffanventory.github.io%2Fposts%2Fextern%2F" data-toggle="tooltip" data-placement="top"
+        <a href="https://www.facebook.com/sharer/sharer.php?title=C%2B%2B+%E2%80%94%E2%80%94+%E5%8A%A8%E6%80%81%E5%BA%93%E5%8A%A0%E8%BD%BD%E5%87%BD%E6%95%B0+-+Fanventory&u=http%3A%2F%2Flocalhost%3A4000%2Fposts%2Fextern%2F" data-toggle="tooltip" data-placement="top"
           title="Facebook" target="_blank" rel="noopener" aria-label="Facebook">
           <i class="fa-fw fab fa-facebook-square"></i>
         </a>
     
       
-        <a href="https://t.me/share/url?url=https%3A%2F%2Ffanventory.github.io%2Fposts%2Fextern%2F&text=C%2B%2B+%E2%80%94%E2%80%94+%E5%8A%A8%E6%80%81%E5%BA%93%E5%8A%A0%E8%BD%BD%E5%87%BD%E6%95%B0+-+Fanventory" data-toggle="tooltip" data-placement="top"
+        <a href="https://t.me/share/url?url=http%3A%2F%2Flocalhost%3A4000%2Fposts%2Fextern%2F&text=C%2B%2B+%E2%80%94%E2%80%94+%E5%8A%A8%E6%80%81%E5%BA%93%E5%8A%A0%E8%BD%BD%E5%87%BD%E6%95%B0+-+Fanventory" data-toggle="tooltip" data-placement="top"
           title="Telegram" target="_blank" rel="noopener" aria-label="Telegram">
           <i class="fa-fw fab fa-telegram"></i>
         </a>
@@ -5527,15 +5527,9 @@ void f(char* p,int size)
 getopt()是用来解析命令行选项参数的，使我们自己不需要编写代码处理命令行参数argv。
 
 函数定义
-1
-2
-3
-4
-5
-6
 #include &amp;lt;unistd.h&amp;gt;     //  头文件
 extern char *optarg;    //  返回选项的参数
-extern int opti...
+extern int optind,      // ...
               </p>
             </div>
           </div>

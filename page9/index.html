@@ -40,17 +40,17 @@
 <meta property="og:locale" content="en" />
 <meta name="description" content="有空的时候随便写点东西." />
 <meta property="og:description" content="有空的时候随便写点东西." />
-<link rel="canonical" href="https://fanventory.github.io/page9/" />
-<meta property="og:url" content="https://fanventory.github.io/page9/" />
+<link rel="canonical" href="http://localhost:4000/page9/" />
+<meta property="og:url" content="http://localhost:4000/page9/" />
 <meta property="og:site_name" content="Fanventory" />
 <meta property="og:type" content="website" />
-<link rel="prev" href="https://fanventory.github.io/page8" />
-<link rel="next" href="https://fanventory.github.io/page10" />
+<link rel="prev" href="http://localhost:4000/page8" />
+<link rel="next" href="http://localhost:4000/page10" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Fanventory" />
 <meta name="twitter:site" content="@Fanventory" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","description":"有空的时候随便写点东西.","headline":"Fanventory","url":"https://fanventory.github.io/page9/"}</script>
+{"@context":"https://schema.org","@type":"WebPage","description":"有空的时候随便写点东西.","headline":"Fanventory","url":"http://localhost:4000/page9/"}</script>
 <!-- End Jekyll SEO tag -->
 
   
@@ -469,7 +469,7 @@
 
   <div class="post-preview">
     <h1>
-      <a href="/posts/VA_LIST/">C++ —— VA_LIST</a>
+      <a href="/posts/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8BAPI_2/">读书笔记 —— 网络编程API_2</a>
     </h1>
 
     <div class="post-content">
@@ -480,16 +480,9 @@
 
 
 
-        VA_LIST
+        socket/bind/listen/accept/connect/close/shutdown
 
-  VA函数(variable argument function)，指参数个数可变的函数，又称可变参数函数。比如c++中的printf、scanf、exce*函数都是参数个数可变的VA函数。为了方便我们处理VA函数，C语言中提出一组宏——VA_LIST，用于解决变参问题。本节我们将深入源码探讨va_list的原理，并用一个示例来说明如何使用它。
-
-
-
-
-
-定义
-VA_LI...
+  本节主要介绍了网络编程中用到的一些api。连接开始之前，我们需要创建一个socket，它是一个文件描述符，保存了地址、协议、端口等信息，我们需要用这个socket来标识连接。我们通过socket系统调用创建socket后，再通过bind系统调用将socket和地址值进行绑定。接着，服务端需...
       </p>
     </div>
 
@@ -508,10 +501,10 @@ VA_LI...
 
 
 <em class=""
-    data-ts="1680697200"
+    data-ts="1682079780"
     data-df="ll"
     >
-  Apr  5, 2023
+  Apr 21, 2023
 </em>
 
 
@@ -520,8 +513,8 @@ VA_LI...
           <i class="far fa-folder-open fa-fw"></i>
           <span>
           
-            other,
-            C++
+            Reading Notes,
+            Linux高性能服务器编程
           </span>
         
 
@@ -537,7 +530,7 @@ VA_LI...
 
   <div class="post-preview">
     <h1>
-      <a href="/posts/%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%A0%BC%E5%BC%8F%E5%8C%96%E5%87%BD%E6%95%B0/">C++ —— string format</a>
+      <a href="/posts/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8BAPI_1/">读书笔记 —— 网络编程API_1</a>
     </h1>
 
     <div class="post-content">
@@ -548,20 +541,19 @@ VA_LI...
 
 
 
-        string format
+        网络编程结构体/转换函数
 
-  本节我们将介绍几个将格式化的字符串写入缓冲区的函数，它们都定义在&amp;lt;cstdio&amp;gt;头文件中。接着我们将探讨一下格式化字符串中用到的各种格式化说明符。最后我们将介绍这几个函数的区别。
-
-
+  本节主要介绍了网络编程中表示socket的结构体，分为通用结构体和专用结构体。这些结构体在使用时都比如强制转换为sockaddr类型。接着介绍了IP地址的转换函数，它们将字符串和网络字节序形式的整数互相转换。最后介绍了网络字节序和主机字节序之间相互转换的函数。
 
 
 
-sprintf
-sprintf的函数原型为：
-sprintf(char* buffer, const char* format, ...);
 
 
-sprint...
+结构体
+网络编程的接口中，通常采用结构体表示socket地址。
+
+sockaddr
+#in...
       </p>
     </div>
 
@@ -580,10 +572,10 @@ sprint...
 
 
 <em class=""
-    data-ts="1680231780"
+    data-ts="1682066880"
     data-df="ll"
     >
-  Mar 31, 2023
+  Apr 21, 2023
 </em>
 
 
@@ -592,8 +584,8 @@ sprint...
           <i class="far fa-folder-open fa-fw"></i>
           <span>
           
-            other,
-            C++
+            Reading Notes,
+            Linux高性能服务器编程
           </span>
         
 
@@ -609,7 +601,7 @@ sprint...
 
   <div class="post-preview">
     <h1>
-      <a href="/posts/%E6%9D%A1%E4%BB%B6%E5%8F%98%E9%87%8Fcond/">C++ —— 条件变量cond</a>
+      <a href="/posts/%E6%9F%A5%E8%AF%A2%E5%B8%A6%E9%94%AE%E7%9A%84%E6%8E%92%E5%88%97/">刷题笔记 —— 查询带键的排列</a>
     </h1>
 
     <div class="post-content">
@@ -620,303 +612,16 @@ sprint...
 
 
 
-        条件变量cond
+        树状数组
 
-  条件变量和信号量不同，它不是用于上锁，而是用来等待线程的，通常与互斥锁一起使用。条件变量可以阻塞当前线程，等待另一个线程完成某些任务，然后唤醒该线程，从而达到线程之间的同步要求。
-
-
-
-
-
-作用
-我们通常用互斥锁确保线程的异步安全，但是它不能完成线程之间的同步操作。比如对于A、B线程，互斥锁只能保证A线程执行过程中，B不会执行。但如果我们要确保A在B之前执行，那互斥锁...
-      </p>
-    </div>
-
-    <div class="post-meta text-muted d-flex">
-      <div class="mr-auto">
-
-        <!-- posted date -->
-        <i class="far fa-calendar fa-fw"></i>
-        <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-
-<em class=""
-    data-ts="1679908380"
-    data-df="ll"
-    >
-  Mar 27, 2023
-</em>
-
-
-        <!-- categories -->
-        
-          <i class="far fa-folder-open fa-fw"></i>
-          <span>
-          
-            other,
-            C++
-          </span>
-        
-
-      </div>
-
-      
-
-    </div> <!-- .post-meta -->
-
-  </div> <!-- .post-review -->
-
-
-
-  <div class="post-preview">
-    <h1>
-      <a href="/posts/%E4%BF%A1%E5%8F%B7%E9%87%8Fsemaphore/">C++ —— 信号量semaphore</a>
-    </h1>
-
-    <div class="post-content">
-      <p>
-        
-
-
-
-
-
-        信号量semaphore
-
-  信号量（Semaphore）的概念最早由荷兰计算机科学家 Dijkstra（迪杰斯特拉）提出，有时又称“信号灯”。信号量是多线程环境下的一个全局变量，它表示最多可以有几个任务同时访问某个共享资源。
-
-
-
-
-
-作用
-信号量的本质是一个全局变量，可以根据实际场景设置信号量的大小（取值范围&amp;gt;=0）。信号量为N表示最多有N个进程或线程访问某个共享资源。
-此外，信...
-      </p>
-    </div>
-
-    <div class="post-meta text-muted d-flex">
-      <div class="mr-auto">
-
-        <!-- posted date -->
-        <i class="far fa-calendar fa-fw"></i>
-        <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-
-<em class=""
-    data-ts="1679908380"
-    data-df="ll"
-    >
-  Mar 27, 2023
-</em>
-
-
-        <!-- categories -->
-        
-          <i class="far fa-folder-open fa-fw"></i>
-          <span>
-          
-            other,
-            C++
-          </span>
-        
-
-      </div>
-
-      
-
-    </div> <!-- .post-meta -->
-
-  </div> <!-- .post-review -->
-
-
-
-  <div class="post-preview">
-    <h1>
-      <a href="/posts/__VA_ARGS__%E7%94%A8%E6%B3%95/">C++ —— __VA_ARGS__用法</a>
-    </h1>
-
-    <div class="post-content">
-      <p>
-        
-
-
-
-
-
-        VA_ARGS
-
-  在C++实现日志打印时，常常会用到__VA_ARGS__或##__VA_ARGS__符号，它的作用是在宏中将可变参数的内容替换掉__VA_ARGS__的内容
-
-
-
-
-
-作用
-__VA_ARGS__在宏中将函数的可变参数进行替换，##__VA_ARGS_则在__VA_ARGS__基础上，使可变参数为零时，去掉参数前面的逗号。
-
-VA_ARGS
-__VA_ARGS__的用法...
-      </p>
-    </div>
-
-    <div class="post-meta text-muted d-flex">
-      <div class="mr-auto">
-
-        <!-- posted date -->
-        <i class="far fa-calendar fa-fw"></i>
-        <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-
-<em class=""
-    data-ts="1679315400"
-    data-df="ll"
-    >
-  Mar 20, 2023
-</em>
-
-
-        <!-- categories -->
-        
-          <i class="far fa-folder-open fa-fw"></i>
-          <span>
-          
-            other,
-            C++
-          </span>
-        
-
-      </div>
-
-      
-
-    </div> <!-- .post-meta -->
-
-  </div> <!-- .post-review -->
-
-
-
-  <div class="post-preview">
-    <h1>
-      <a href="/posts/getopt%E5%87%BD%E6%95%B0/">C++ —— getopt函数用法</a>
-    </h1>
-
-    <div class="post-content">
-      <p>
-        
-
-
-
-
-
-        getopt函数用法
-
-  getopt()被用来解析命令行选项参数
-
-
-
-
-
-作用
-getopt()是用来解析命令行选项参数的，使我们自己不需要编写代码处理命令行参数argv。
-
-函数定义
-#include &amp;lt;unistd.h&amp;gt;     //  头文件
-extern char *optarg;    //  返回选项的参数
-extern int optind,      // ...
-      </p>
-    </div>
-
-    <div class="post-meta text-muted d-flex">
-      <div class="mr-auto">
-
-        <!-- posted date -->
-        <i class="far fa-calendar fa-fw"></i>
-        <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-
-<em class=""
-    data-ts="1679038740"
-    data-df="ll"
-    >
-  Mar 17, 2023
-</em>
-
-
-        <!-- categories -->
-        
-          <i class="far fa-folder-open fa-fw"></i>
-          <span>
-          
-            other,
-            C++
-          </span>
-        
-
-      </div>
-
-      
-
-    </div> <!-- .post-meta -->
-
-  </div> <!-- .post-review -->
-
-
-
-  <div class="post-preview">
-    <h1>
-      <a href="/posts/%E5%A4%8D%E6%9D%82%E9%93%BE%E8%A1%A8%E7%9A%84%E5%A4%8D%E5%88%B6/">刷题笔记 —— 复杂链表的复制</a>
-    </h1>
-
-    <div class="post-content">
-      <p>
-        
-
-
-
-
-
-        链表
-
-  复杂链表的复制问题是链表指针比较复杂的情况下，如何原地进行深复制
+  该问题题干比较绕，大概要求是在给定的排列P中找到queries[i]所处下标，然后修改P的排列顺序。因为顺序改变了，所以导致下标无法在O(1)时间内求得。本题一种巧妙的方法是用树状数组实现
 
 
 
 
 
 题目
-请实现 copyRandomList 函数，复制一个复杂链表。在复杂链表中，每个节点除了有一个 next 指针指向下一个节点，还有一个 random 指针指向链表中的任意节点或者 null。
-
-例子
-
-示例1
-
-输入：head = [[7,null],[13,0],[11,4],[10,2],[1,...
+给你一个待查数组 queries ，数组中的元素为 1 到 m 之间的正整数。 请你根据以下规则处理所有待查项 queries[i]（从 i=0 到 i=queries.l...
       </p>
     </div>
 
@@ -935,10 +640,10 @@ extern int optind,      // ...
 
 
 <em class=""
-    data-ts="1678955940"
+    data-ts="1681960560"
     data-df="ll"
     >
-  Mar 16, 2023
+  Apr 20, 2023
 </em>
 
 
@@ -963,7 +668,7 @@ extern int optind,      // ...
 
   <div class="post-preview">
     <h1>
-      <a href="/posts/Effective-C++_%E5%BC%82%E5%B8%B8%E5%AE%89%E5%85%A8/">读书笔记 —— Effective C++ (异常安全)</a>
+      <a href="/posts/%E6%8C%89%E7%AC%A6%E5%8F%B7%E9%87%8D%E6%8E%92%E6%95%B0%E7%BB%84/">刷题笔记 —— 按符号重排数组</a>
     </h1>
 
     <div class="post-content">
@@ -974,8 +679,21 @@ extern int optind,      // ...
 
 
 
-        
-  本节中我们探讨异常安全代码，首先我们通过一个例子指出这个例子中存在的异常不安全行为。在解决这些行为之前，我们先认识一下异常安全保证的等级。这很重要，因为我们需要根据选择的异常安全保证来解决例子中的问题。通常的解决方法有调换代码逻辑顺序，用智能指针管理对象。接着我们提出了一般化的异常安全代码设计策略，copy-and-swap。最后我们强调了并不是任何代码都可以改写成异常安全的，首先是异...
+        排序
+
+  该问题是一个简单的将数组转换为交叉数组，且要求保留原来相同正负号的元素间的前后顺序。
+
+
+
+
+
+题目
+给你一个下标从 0 开始的整数数组 nums ，数组长度为 偶数 ，由数目相等的正整数和负整数组成。
+你需要 重排 nums 中的元素，使修改后的数组满足下述条件：
+
+  任意 连续 的两个整数 符号相反
+  对于符号相同的所有整数，保留 它们在 nums 中的 顺序 。
+  重...
       </p>
     </div>
 
@@ -994,10 +712,10 @@ extern int optind,      // ...
 
 
 <em class=""
-    data-ts="1678864560"
+    data-ts="1681907280"
     data-df="ll"
     >
-  Mar 15, 2023
+  Apr 19, 2023
 </em>
 
 
@@ -1006,8 +724,7 @@ extern int optind,      // ...
           <i class="far fa-folder-open fa-fw"></i>
           <span>
           
-            Reading Notes,
-            Effective C++
+            leetcode
           </span>
         
 
@@ -1023,7 +740,7 @@ extern int optind,      // ...
 
   <div class="post-preview">
     <h1>
-      <a href="/posts/C++_%E5%BC%82%E5%B8%B8/">读书笔记 —— C++ 异常处理</a>
+      <a href="/posts/%E5%85%81%E8%AE%B8%E9%87%8D%E5%A4%8D%E9%80%89%E6%8B%A9%E5%85%83%E7%B4%A0%E7%9A%84%E7%BB%84%E5%90%88/">刷题笔记 —— 允许重复选择元素的组合</a>
     </h1>
 
     <div class="post-content">
@@ -1034,9 +751,17 @@ extern int optind,      // ...
 
 
 
-        异常处理
+        回溯/动态规划
 
-  异常处理(expection handing)机制是程序中独立开发的一个部分，它能够对运行时出现的问题进行通信并做出相应的处理。异常使我们能够将问题的检测和解决过程分离开来。程序的一部分负责检测问题的出现，当问题出现后将该错误信息传递给程序的另一部分，由程序的另一部分解决该问题。这样，检测环节无需知道问题处理模块的所有细节，反之亦然。本章中我们介绍了异常的抛出和捕获过程。捕获...
+  该问题是在数组中找出和等于target的子集，在组合问题的基础上增加了元素可重复选取的条件，可以用回溯法实现。这里我们给出用动态规划的另一种实现方式。
+
+
+
+
+
+题目
+给定一个无重复元素的正整数数组 candidates 和一个正整数 target ，找出 candidates 中所有可以使数字和为目标数 target 的组合。
+candidates 中的数字可以无限制...
       </p>
     </div>
 
@@ -1055,10 +780,10 @@ extern int optind,      // ...
 
 
 <em class=""
-    data-ts="1678775100"
+    data-ts="1681820880"
     data-df="ll"
     >
-  Mar 14, 2023
+  Apr 18, 2023
 </em>
 
 
@@ -1067,8 +792,7 @@ extern int optind,      // ...
           <i class="far fa-folder-open fa-fw"></i>
           <span>
           
-            Reading Notes,
-            C++ Primer
+            leetcode
           </span>
         
 
@@ -1084,7 +808,7 @@ extern int optind,      // ...
 
   <div class="post-preview">
     <h1>
-      <a href="/posts/C++_%E6%A8%A1%E6%9D%BF%E4%B8%8E%E6%B3%9B%E5%9E%8B%E7%BC%96%E7%A8%8B_8/">读书笔记 —— C++ 模板与泛型编程(8)</a>
+      <a href="/posts/%E6%95%B0%E7%BB%84%E4%B8%AD%E6%95%B0%E5%AD%97%E5%87%BA%E7%8E%B0%E7%9A%84%E6%AC%A1%E6%95%B0-II/">刷题笔记 —— 数组中数字出现的次数 II</a>
     </h1>
 
     <div class="post-content">
@@ -1095,9 +819,26 @@ extern int optind,      // ...
 
 
 
-        模板特例化
+        有限状态自动机/位运算
 
-  本节中介绍了模板特例化，如果我们不想用通用模板实例化，而是针对某一个类型使用特定优化代码时，我们可以将类模板或函数模板特例化。我们通过例子介绍了如何特例化函数模板和类模板。函数模板的特例化是模板的一个实例，而并非重载，不会影响函数匹配。除此之外，类模板可以部分特例化，而函数模板不行。部分特例化是提供一部分实参或者提供模板参数的一个特例化版本。部分特例化的版本还是一个模板，使...
+  该题是在数组中找出只出现一次的元素，其他元素出现三次。核心思想就是对各个二进制位相加，再取余，最后得到的就是只出现一次的元素的二进制数。
+
+
+
+
+
+题目
+在一个数组 nums 中除一个数字只出现一次之外，其他数字都出现了三次。请找出那个只出现一次的数字。
+
+例子
+
+示例1
+输入：nums = [3,4,3,3]
+输出：4
+
+
+示例2
+输入：nums = [9,1...
       </p>
     </div>
 
@@ -1116,10 +857,10 @@ extern int optind,      // ...
 
 
 <em class=""
-    data-ts="1678174380"
+    data-ts="1681736100"
     data-df="ll"
     >
-  Mar  7, 2023
+  Apr 17, 2023
 </em>
 
 
@@ -1128,8 +869,268 @@ extern int optind,      // ...
           <i class="far fa-folder-open fa-fw"></i>
           <span>
           
-            Reading Notes,
-            C++ Primer
+            leetcode
+          </span>
+        
+
+      </div>
+
+      
+
+    </div> <!-- .post-meta -->
+
+  </div> <!-- .post-review -->
+
+
+
+  <div class="post-preview">
+    <h1>
+      <a href="/posts/%E7%BB%9F%E8%AE%A1%E6%8C%89%E4%BD%8D%E6%88%96%E8%83%BD%E5%BE%97%E5%88%B0%E6%9C%80%E5%A4%A7%E5%80%BC%E7%9A%84%E5%AD%90%E9%9B%86%E6%95%B0%E7%9B%AE/">刷题笔记 —— 统计按位或能得到最大值的子集数目</a>
+    </h1>
+
+    <div class="post-content">
+      <p>
+        
+
+
+
+
+
+        回溯/状态压缩
+
+  先通过位或运算得到最大值，然后找出数组中通过位或运算等于最大值的子集数目
+
+
+
+
+
+题目
+给你一个整数数组 nums ，请你找出nums子集按位或可能得到的最大值，并返回按位或能得到最大值的不同非空子集的数目。 
+如果数组 a 可以由数组 b 删除一些元素（或不删除）得到，则认为数组 a 是数组 b 的一个 子集 。如果选中的元素下标位置不一样，则认为两个子集不同 。
+...
+      </p>
+    </div>
+
+    <div class="post-meta text-muted d-flex">
+      <div class="mr-auto">
+
+        <!-- posted date -->
+        <i class="far fa-calendar fa-fw"></i>
+        <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+
+<em class=""
+    data-ts="1681715700"
+    data-df="ll"
+    >
+  Apr 17, 2023
+</em>
+
+
+        <!-- categories -->
+        
+          <i class="far fa-folder-open fa-fw"></i>
+          <span>
+          
+            leetcode
+          </span>
+        
+
+      </div>
+
+      
+
+    </div> <!-- .post-meta -->
+
+  </div> <!-- .post-review -->
+
+
+
+  <div class="post-preview">
+    <h1>
+      <a href="/posts/%E4%B8%A4%E7%82%B9%E4%B9%8B%E9%97%B4%E4%B8%8D%E5%8C%85%E5%90%AB%E4%BB%BB%E4%BD%95%E7%82%B9%E7%9A%84%E6%9C%80%E5%AE%BD%E5%9E%82%E7%9B%B4%E5%8C%BA%E5%9F%9F/">刷题笔记 —— 两点之间不包含任何点的最宽垂直区域</a>
+    </h1>
+
+    <div class="post-content">
+      <p>
+        
+
+
+
+
+
+        排序
+
+  两点之间不包含任何点的最宽垂直区域问题是求出两点之间的最大差值，运用桶排序算法可以做到O(n)复杂度
+
+
+
+
+
+题目
+给你 n 个二维平面上的点 points ，其中 points[i] = [xi, yi] ，请你返回两点之间内部不包含任何点的 最宽垂直区域 的宽度。
+垂直区域 的定义是固定宽度，而 y 轴上无限延伸的一块区域（也就是高度为无穷大）。 最宽垂直区域 为宽度最大的...
+      </p>
+    </div>
+
+    <div class="post-meta text-muted d-flex">
+      <div class="mr-auto">
+
+        <!-- posted date -->
+        <i class="far fa-calendar fa-fw"></i>
+        <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+
+<em class=""
+    data-ts="1681461000"
+    data-df="ll"
+    >
+  Apr 14, 2023
+</em>
+
+
+        <!-- categories -->
+        
+          <i class="far fa-folder-open fa-fw"></i>
+          <span>
+          
+            leetcode
+          </span>
+        
+
+      </div>
+
+      
+
+    </div> <!-- .post-meta -->
+
+  </div> <!-- .post-review -->
+
+
+
+  <div class="post-preview">
+    <h1>
+      <a href="/posts/close-on-exec/">C++ —— close on exec</a>
+    </h1>
+
+    <div class="post-content">
+      <p>
+        
+
+
+
+
+
+        close on exec
+
+  由于子进程会继承父进程的文件描述符，但是子进程执行exec系统调用时，子进程对应的堆栈、上下文等数据会被替换，这时候没有关闭的文件描述符可能会带来严重的危害。fcntl调用提供了close on exec属性来解决这个问题，使目标文件描述符在exec调用之前自动被关闭。随着内核版本的升级，open和socket等相同调用也提供了类似的字段实现相同的功能。
+
+...
+      </p>
+    </div>
+
+    <div class="post-meta text-muted d-flex">
+      <div class="mr-auto">
+
+        <!-- posted date -->
+        <i class="far fa-calendar fa-fw"></i>
+        <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+
+<em class=""
+    data-ts="1681268580"
+    data-df="ll"
+    >
+  Apr 12, 2023
+</em>
+
+
+        <!-- categories -->
+        
+          <i class="far fa-folder-open fa-fw"></i>
+          <span>
+          
+            other,
+            C++
+          </span>
+        
+
+      </div>
+
+      
+
+    </div> <!-- .post-meta -->
+
+  </div> <!-- .post-review -->
+
+
+
+  <div class="post-preview">
+    <h1>
+      <a href="/posts/%E7%BD%91%E7%BB%9C%E5%AD%97%E8%8A%82%E5%BA%8F/">C++ —— 网络字节序</a>
+    </h1>
+
+    <div class="post-content">
+      <p>
+        
+
+
+
+
+
+        网络字节序
+
+  主机中根据字节高低位的存储顺序分为大端模式和小端模式，我们把主机存储字节的顺序叫做主机字节序。由于不同的主机存储的字节顺序是不同的，通常由CPU决定。所以在网络通信中，我们需要统一存储顺序，即都采用大端模式存储，我们称之为网络字节序。在下面内容中我们围绕网络字节序展开研究，介绍了网络字节序和主机字节序的转换方法。网络字节序一般用于端口号或ip地址，所以我们还介绍了ip地址的...
+      </p>
+    </div>
+
+    <div class="post-meta text-muted d-flex">
+      <div class="mr-auto">
+
+        <!-- posted date -->
+        <i class="far fa-calendar fa-fw"></i>
+        <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+
+<em class=""
+    data-ts="1681268580"
+    data-df="ll"
+    >
+  Apr 12, 2023
+</em>
+
+
+        <!-- categories -->
+        
+          <i class="far fa-folder-open fa-fw"></i>
+          <span>
+          
+            other,
+            C++
           </span>
         
 
@@ -1338,9 +1339,29 @@ extern int optind,      // ...
     
 
     
+      <!-- hide number -->
+      
+        <li class="page-item disabled">
+          <span class="page-link btn-box-shadow">...</span>
+        </li>
+        
+      
+    
+
+  
+
+    
+    
+    
+    
+    
+
+    
+
+    
       <!-- show number -->
       <li class="page-item ">
-        <a class="page-link btn-box-shadow" href="/page11">11</a>
+        <a class="page-link btn-box-shadow" href="/page12">12</a>
       </li>
     
 
@@ -1349,7 +1370,7 @@ extern int optind,      // ...
   <!-- mobile pagination -->
   <li class="page-index align-middle">
     <span>9</span>
-    <span class="text-muted">/ 11</span>
+    <span class="text-muted">/ 12</span>
   </li>
 
   <!-- right arrow -->
@@ -1672,305 +1693,6 @@ extern int optind,      // ...
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -1990,215 +1712,6 @@ extern int optind,      // ...
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -2633,195 +2146,50 @@ extern int optind,      // ...
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
       
         
         
 
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -3451,6 +2819,96 @@ extern int optind,      // ...
     
     
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
       
         
         
@@ -3670,6 +3128,684 @@ extern int optind,      // ...
     
     
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
       
     
   
@@ -3706,6 +3842,21 @@ extern int optind,      // ...
         
         
 
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -4235,305 +4386,6 @@ extern int optind,      // ...
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -4553,215 +4405,6 @@ extern int optind,      // ...
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -5196,195 +4839,50 @@ extern int optind,      // ...
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
       
         
         
 
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -6014,6 +5512,96 @@ extern int optind,      // ...
     
     
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
       
         
         
@@ -6233,6 +5821,684 @@ extern int optind,      // ...
     
     
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
       
     
   
@@ -6269,6 +6535,21 @@ extern int optind,      // ...
         
         
 
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     

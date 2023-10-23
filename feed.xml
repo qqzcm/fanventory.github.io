@@ -1,17 +1,17 @@
 
 
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <id>https://fanventory.github.io/</id>
+  <id>http://localhost:4000/</id>
   <title>Fanventory</title>
   <subtitle>有空的时候随便写点东西.</subtitle>
-  <updated>2023-07-26T20:16:59+08:00</updated>
+  <updated>2023-10-23T20:04:07+08:00</updated>
   <author>
     <name>Fanventory</name>
-    <uri>https://fanventory.github.io/</uri>
+    <uri>http://localhost:4000/</uri>
   </author>
-  <link rel="self" type="application/atom+xml" href="https://fanventory.github.io/feed.xml"/>
+  <link rel="self" type="application/atom+xml" href="http://localhost:4000/feed.xml"/>
   <link rel="alternate" type="text/html" hreflang="en"
-    href="https://fanventory.github.io/"/>
+    href="http://localhost:4000/"/>
   <generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator>
   <rights> © 2023 Fanventory </rights>
   <icon>/assets/img/favicons/favicon.ico</icon>
@@ -20,184 +20,14 @@
 
   
   <entry>
-    <title>刷题笔记 ——  通配符匹配</title>
-    <link href="https://fanventory.github.io/posts/%E9%80%9A%E9%85%8D%E7%AC%A6%E5%8C%B9%E9%85%8D/" rel="alternate" type="text/html" title="刷题笔记 ——  通配符匹配" />
-    <published>2023-07-25T14:26:00+08:00</published>
+    <title>读书笔记 —— 装饰者模式</title>
+    <link href="http://localhost:4000/posts/%E8%A3%85%E9%A5%B0%E8%80%85%E6%A8%A1%E5%BC%8F/" rel="alternate" type="text/html" title="读书笔记 —— 装饰者模式" />
+    <published>2023-10-18T10:47:00+08:00</published>
   
-    <updated>2023-07-25T14:26:00+08:00</updated>
+    <updated>2023-10-18T10:47:00+08:00</updated>
   
-    <id>https://fanventory.github.io/posts/%E9%80%9A%E9%85%8D%E7%AC%A6%E5%8C%B9%E9%85%8D/</id>
-    <content src="https://fanventory.github.io/posts/%E9%80%9A%E9%85%8D%E7%AC%A6%E5%8C%B9%E9%85%8D/" />
-    <author>
-      <name>Fanventory</name>
-    </author>
-
-  
-    
-    <category term="leetcode" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      Dynamic Programming/Finite State Machine
-
-  该题和正则表达式匹配的题目很类似，区别在于正则表达式的通配符*是两个字符，而该题的通配符*只需要一个字符就能完成容易匹配，所以该题在递归匹配时分支过多，导致超时。另外该题可以转换为字符串匹配问题，用有限状态机进行优化。
-
-
-
-
-
-题目
-给你一个输入字符串 (s) 和一个字符模式 (p) ，请你实现一个支持 ‘?’ 和 ‘’ 匹配规则的通配符匹配：
-‘?’ 可以匹配任何单个字符。
-‘’ 可以匹配任意字符序列（包括空字符序列）。
-判定匹配成功的充要条件是：字符模式必须能够 完全匹配 输入字符串（而不是部分匹配）。
-
-例子
-
-示例1
-
-输入：s = "aa", p = "a"
-输出：false
-解释："a" 无法匹配 "aa" 整个字符串。
-
-
-示例2
-
-输入：s = "aa", p = "*"
-输出：...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>刷题笔记 ——  单词接龙 II</title>
-    <link href="https://fanventory.github.io/posts/%E5%8D%95%E8%AF%8D%E6%8E%A5%E9%BE%99/" rel="alternate" type="text/html" title="刷题笔记 ——  单词接龙 II" />
-    <published>2023-07-24T16:52:00+08:00</published>
-  
-    <updated>2023-07-24T16:52:00+08:00</updated>
-  
-    <id>https://fanventory.github.io/posts/%E5%8D%95%E8%AF%8D%E6%8E%A5%E9%BE%99/</id>
-    <content src="https://fanventory.github.io/posts/%E5%8D%95%E8%AF%8D%E6%8E%A5%E9%BE%99/" />
-    <author>
-      <name>Fanventory</name>
-    </author>
-
-  
-    
-    <category term="leetcode" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      BFS/DFS
-
-  该题是判断给定的简单正则表达式能否匹配字符串，难点在于匹配过程存在很多情况。
-
-
-
-
-
-题目
-按字典 wordList 完成从单词 beginWord 到单词 endWord 转化，一个表示此过程的 转换序列 是形式上像 beginWord -&amp;gt; s1 -&amp;gt; s2 -&amp;gt; … -&amp;gt; sk 这样的单词序列，并满足：
-
-每对相邻的单词之间仅有单个字母不同。
-转换过程中的每个单词 si（1 &amp;lt;= i &amp;lt;= k）必须是字典 wordList 中的单词。注意，beginWord 不必是字典 wordList 中的单词。
-sk == endWord
-给你两个单词 beginWord 和 endWord ，以及一个字典 wordList 。请你找出并返回所有从 beginWord 到 endWord 的 最短转换序列 ，如果不存在这样的转换序...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>刷题笔记 ——  正则表达式匹配</title>
-    <link href="https://fanventory.github.io/posts/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%8C%B9%E9%85%8D/" rel="alternate" type="text/html" title="刷题笔记 ——  正则表达式匹配" />
-    <published>2023-07-24T15:32:00+08:00</published>
-  
-    <updated>2023-07-24T15:32:00+08:00</updated>
-  
-    <id>https://fanventory.github.io/posts/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%8C%B9%E9%85%8D/</id>
-    <content src="https://fanventory.github.io/posts/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%8C%B9%E9%85%8D/" />
-    <author>
-      <name>Fanventory</name>
-    </author>
-
-  
-    
-    <category term="leetcode" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      Dynamic Programming/Recursion
-
-  该题是判断给定的简单正则表达式能否匹配字符串，难点在于匹配过程存在很多情况。
-
-
-
-
-
-题目
-请实现一个函数用来匹配包含’. ‘和’*‘的正则表达式。模式中的字符’.’表示任意一个字符，而’*‘表示它前面的字符可以出现任意次（含0次）。在本题中，匹配是指字符串的所有字符匹配整个模式。例如，字符串”aaa”与模式”a.a”和”ab*ac*a”匹配，但与”aa.a”和”ab*a”均不匹配。
-
-例子
-
-示例1
-
-输入:
-s = "aa"
-p = "a"
-输出: false
-解释: "a" 无法匹配 "aa" 整个字符串。
-
-
-示例2
-
-输入:
-s = "aa"
-p = "a*"
-输出: true
-解释: 因为 '*' 代表可以匹配零个或多个前面的那一个元素, 在这里前面的元素就是 'a'。因此，字符串 "aa" 可被视为 '...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>读书笔记 —— gdb调试</title>
-    <link href="https://fanventory.github.io/posts/gdb%E8%B0%83%E8%AF%95/" rel="alternate" type="text/html" title="读书笔记 —— gdb调试" />
-    <published>2023-07-24T11:12:00+08:00</published>
-  
-    <updated>2023-07-24T11:12:00+08:00</updated>
-  
-    <id>https://fanventory.github.io/posts/gdb%E8%B0%83%E8%AF%95/</id>
-    <content src="https://fanventory.github.io/posts/gdb%E8%B0%83%E8%AF%95/" />
+    <id>http://localhost:4000/posts/%E8%A3%85%E9%A5%B0%E8%80%85%E6%A8%A1%E5%BC%8F/</id>
+    <content src="http://localhost:4000/posts/%E8%A3%85%E9%A5%B0%E8%80%85%E6%A8%A1%E5%BC%8F/" />
     <author>
       <name>Fanventory</name>
     </author>
@@ -206,7 +36,7 @@ p = "a*"
     
     <category term="Reading Notes" />
     
-    <category term="Linux高性能服务器编程" />
+    <category term="Head First Design Patterns" />
     
   
 
@@ -218,60 +48,51 @@ p = "a*"
 
 
 
-      gdb
+      装饰者模式
 
-  本节总结了一些常用的gdb调试命令，展示了如何调试多进程程序和多线程程序。
-
-
+  装饰者模式
 
 
 
-常用的gdb命令
 
 
-  显示函数
+场景
+
+我们现在要为一家咖啡店设计一个订单系统，由于咖啡的种类有很多，所以我们想到先创建一个子类，然后创建不同的父类代表不同种类的咖啡。下面我们给出第一个版本。
+
+第一个版本
+
+子类如下所示：
 
 
-(gdb)info functions
+  
+    
+      Beverage
+    
+  
+  
+    
+      description
+    
+    
+       
+    
+    
+      getDescription()
+    
+    
+      cost()
+    
+  
 
 
-支持正则匹配
+其中description字段表示咖啡的描述，比如当前这杯咖啡是“最优深度烘焙，半糖的”。cost()方法是这杯咖啡的价格，我们可以定义为抽象方法。
 
-(gdb)info functions func*
-
-
-
-  进入函数
+然后我们导入咖啡类型，以蒸馏咖啡Espresso和深烘焙咖啡DarkRoast为例（当然咖啡种类不止这么多）。
 
 
-step：会进入函数内部
-next：不进入函数，等待函数执行完，显示下一行函数代码
 
-
-  退出函数
-
-
-finish：继续执行函数中剩余代码，打印返回值，显示下一行代码。
-return：不继续执行函数中剩余代码，而是直接返回。可以直接使用return expression来更改设置返回值。
-
-
-  直接执行函数
-
-
-可以直接使用call或者print直接调用函数。
-
-
-  打印函数堆栈帧信息
-
-
-(gdb) info frame
-
-
-  选择函数堆栈帧
-
-
-(gdb) bt
-#0  func1 (a=10) a...
+当然...
     </summary>
   
 
@@ -279,14 +100,14 @@ return：不继续执行函数中剩余代码，而是直接返回。可以直�
 
   
   <entry>
-    <title>读书笔记 —— 调整内核参数</title>
-    <link href="https://fanventory.github.io/posts/%E8%B0%83%E6%95%B4%E5%86%85%E6%A0%B8%E5%8F%82%E6%95%B0/" rel="alternate" type="text/html" title="读书笔记 —— 调整内核参数" />
-    <published>2023-07-24T09:34:00+08:00</published>
+    <title>读书笔记 —— 观察者模式</title>
+    <link href="http://localhost:4000/posts/%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F/" rel="alternate" type="text/html" title="读书笔记 —— 观察者模式" />
+    <published>2023-10-17T10:53:00+08:00</published>
   
-    <updated>2023-07-24T09:34:00+08:00</updated>
+    <updated>2023-10-17T10:53:00+08:00</updated>
   
-    <id>https://fanventory.github.io/posts/%E8%B0%83%E6%95%B4%E5%86%85%E6%A0%B8%E5%8F%82%E6%95%B0/</id>
-    <content src="https://fanventory.github.io/posts/%E8%B0%83%E6%95%B4%E5%86%85%E6%A0%B8%E5%8F%82%E6%95%B0/" />
+    <id>http://localhost:4000/posts/%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F/</id>
+    <content src="http://localhost:4000/posts/%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F/" />
     <author>
       <name>Fanventory</name>
     </author>
@@ -295,7 +116,7 @@ return：不继续执行函数中剩余代码，而是直接返回。可以直�
     
     <category term="Reading Notes" />
     
-    <category term="Linux高性能服务器编程" />
+    <category term="Head First Design Patterns" />
     
   
 
@@ -307,29 +128,236 @@ return：不继续执行函数中剩余代码，而是直接返回。可以直�
 
 
 
-      调整内核参数
+      观察者模式
 
-  本节探讨了Linux系统内核参数，这些内核参数都位于/proc/sys文件系统中。通常一个配置文件对应一个内核参数，文件名是参数的名称，文件内存是参数的值。我们可以通过修改文件内容或通过sysctl命令来修改内核参数。我们介绍了几个和服务器程序相关的内核参数。
-
-
+  观察者模式是对象之间存在一对多依赖时，当一个对象改变状态，其被依赖的对象都能收到通知并进行更新。
 
 
 
-内核参数
-
-几乎所有的内核模块，包括内核核心模块和驱动程序，都在/proc/sys文件系统下提供了某些配置文件以供用户调整模块的属性和行为。通常一个配置文件对应一个内核参数，文件名是参数的名称，文件内存是参数的值。
-我们也可以通过sysctl -a查看所有内核参数。
-
-/proc/sys/fs目录下的部分文件
-
-/proc/sys/fs目录下的内核参数都与文件系统相关。对于服务器程序，最重要的是以下两个参数：
 
 
-  /proc/sys/fs/file-max
+场景
+
+我们现在有一个需求，气象传感器收集湿度、温度、气压信息，然后通过信息采集模块采集数据后，我们编写一款气象监测程序来获取这些数据，并显示在用户设备上。如下图所示：
 
 
-系统级文件描述符数量的限制。
-一...
+
+我们只关心绿色的WeatherData类部分，类中方法如下所示：
+
+
+  
+    
+      WeatherData
+    
+  
+  
+    
+      getTemperature()
+    
+    
+      getHumidity()
+    
+    
+      getPressure()
+    
+    
+      measurementsChanged()
+    
+  
+
+
+底层硬件提供了getTemperature()、getHumidity()、...
+    </summary>
+  
+
+  </entry>
+
+  
+  <entry>
+    <title>刷题笔记 ——  分割字符串Ⅱ</title>
+    <link href="http://localhost:4000/posts/%E5%88%86%E5%89%B2%E5%AD%97%E7%AC%A6%E4%B8%B2/" rel="alternate" type="text/html" title="刷题笔记 ——  分割字符串Ⅱ" />
+    <published>2023-10-13T15:30:00+08:00</published>
+  
+    <updated>2023-10-13T15:30:00+08:00</updated>
+  
+    <id>http://localhost:4000/posts/%E5%88%86%E5%89%B2%E5%AD%97%E7%AC%A6%E4%B8%B2/</id>
+    <content src="http://localhost:4000/posts/%E5%88%86%E5%89%B2%E5%AD%97%E7%AC%A6%E4%B8%B2/" />
+    <author>
+      <name>Fanventory</name>
+    </author>
+
+  
+    
+    <category term="leetcode" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      Dynamic Programming
+
+  该题要求将字符串分割成若干个回文串，难点在于如何构建状态方程。
+
+
+
+
+
+题目
+给定一个字符串 s，请将 s 分割成一些子串，使每个子串都是回文串。
+
+返回符合要求的 最少分割次数 。
+
+例子
+
+示例1
+
+输入：s = "aab"
+输出：1
+解释：只需一次分割就可将 s 分割成 ["aa","b"] 这样两个回文子串。
+
+
+示例2
+
+输入：s = "a"
+输出：0
+
+
+示例3
+
+输入：s = "ab"
+输出：1
+
+
+条件
+
+  1 &amp;lt;= s.length &amp;lt;= 2000
+  s 仅由小写英文字母组成
+
+
+难点分析
+
+我们一个朴素的想法是，一个长度为n的回文串，最多分割n-1次。那我们可以定义一个dp数组，其中dp[i]表示第i位到字符串结尾的最小分割次数，初始值是dp[i] = n - i - 1;
+如果中间某一部分能构成回文...
+    </summary>
+  
+
+  </entry>
+
+  
+  <entry>
+    <title>C++ —— 动态库加载函数</title>
+    <link href="http://localhost:4000/posts/extern/" rel="alternate" type="text/html" title="C++ —— 动态库加载函数" />
+    <published>2023-08-03T21:18:00+08:00</published>
+  
+    <updated>2023-08-03T21:18:00+08:00</updated>
+  
+    <id>http://localhost:4000/posts/extern/</id>
+    <content src="http://localhost:4000/posts/extern/" />
+    <author>
+      <name>Fanventory</name>
+    </author>
+
+  
+    
+    <category term="other" />
+    
+    <category term="C++" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      extern
+
+  本文介绍了extern关键字的作用，我们可以分为两种：(1)extern关键字用于声明变量和函数；(2)extern “C”用于指示编译器将代码按照C语言的风格进行编译和连接。接着我们通过例子说明了如何在C++中调用C的代码以及如何在C中调用C++的代码。最后我们需要注意混合使用C和C++时，应该统一地使用函数和函数指针，避免它们两者的编译和连接方式不同。
+
+
+
+
+
+extern关键字
+
+extern的作用是用来声明变量和函数的。
+
+我们先来看函数的声明：
+
+extern int method();    //  函数声明
+int method()            //  函数定义
+{
+    ... 
+}
+
+//  由于函数的声明和定义可以清楚地区分开来，所以extern关键字可以省略
+int method();
+
+
+但是变量的声明和定义并不能清楚的区分开...
+    </summary>
+  
+
+  </entry>
+
+  
+  <entry>
+    <title>C++ —— 动态库加载函数</title>
+    <link href="http://localhost:4000/posts/%E5%8A%A8%E6%80%81%E5%BA%93%E5%8A%A0%E8%BD%BD%E5%87%BD%E6%95%B0/" rel="alternate" type="text/html" title="C++ —— 动态库加载函数" />
+    <published>2023-08-03T21:18:00+08:00</published>
+  
+    <updated>2023-08-03T21:18:00+08:00</updated>
+  
+    <id>http://localhost:4000/posts/%E5%8A%A8%E6%80%81%E5%BA%93%E5%8A%A0%E8%BD%BD%E5%87%BD%E6%95%B0/</id>
+    <content src="http://localhost:4000/posts/%E5%8A%A8%E6%80%81%E5%BA%93%E5%8A%A0%E8%BD%BD%E5%87%BD%E6%95%B0/" />
+    <author>
+      <name>Fanventory</name>
+    </author>
+
+  
+    
+    <category term="other" />
+    
+    <category term="C++" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      dlsym/dlopen
+
+  在实际开发中我们有这样一些需求：为系统调用设置钩子函数。所以我们需要重写系统调用，而且为了避免大量修改代码，修改后的钩子函数需要和原来的系统调用重名。为了解决原来的系统调用符号丢失的问题，dlsym函数可以从动态库中获取符号地址，然后利用这些符号地址实现原来系统调用的功能。对于自定义的动态库，可以利用dlopen函数先加载自定义动态库，再利用dlsym函数获取符号地址。
+
+
+
+
+
+问题场景
+
+有时候我们需要对系统调用函数进行包装，我们的要求是包装后的函数名和系统调用的名字相同(因为我们的旧代码可能有大量的系统调用，一个一个修改显然费时费力)。这时会有两个问题：
+
+  原来的系统调用符号丢失了，我们该怎么调用原来的系统调用函数？
+  包装后的新函数名和原来的系统调用重名了，会发生了冲突吗？
+
+
+dlsym
+
+要解决第一个问题，我们可以从动态库中获取原来系...
     </summary>
   
 

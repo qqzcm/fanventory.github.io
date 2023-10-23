@@ -40,17 +40,17 @@
 <meta property="og:locale" content="en" />
 <meta name="description" content="有空的时候随便写点东西." />
 <meta property="og:description" content="有空的时候随便写点东西." />
-<link rel="canonical" href="https://fanventory.github.io/page5/" />
-<meta property="og:url" content="https://fanventory.github.io/page5/" />
+<link rel="canonical" href="http://localhost:4000/page5/" />
+<meta property="og:url" content="http://localhost:4000/page5/" />
 <meta property="og:site_name" content="Fanventory" />
 <meta property="og:type" content="website" />
-<link rel="prev" href="https://fanventory.github.io/page4" />
-<link rel="next" href="https://fanventory.github.io/page6" />
+<link rel="prev" href="http://localhost:4000/page4" />
+<link rel="next" href="http://localhost:4000/page6" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Fanventory" />
 <meta name="twitter:site" content="@Fanventory" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","description":"有空的时候随便写点东西.","headline":"Fanventory","url":"https://fanventory.github.io/page5/"}</script>
+{"@context":"https://schema.org","@type":"WebPage","description":"有空的时候随便写点东西.","headline":"Fanventory","url":"http://localhost:4000/page5/"}</script>
 <!-- End Jekyll SEO tag -->
 
   
@@ -469,7 +469,7 @@
 
   <div class="post-preview">
     <h1>
-      <a href="/posts/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B%E6%9C%8D%E5%8A%A1%E5%99%A8IO%E6%A8%A1%E5%9E%8B%E7%AE%80%E4%BB%8B/">读书笔记 —— 网络编程_服务器IO模型简介</a>
+      <a href="/posts/%E4%BF%A1%E5%8F%B7_3/">读书笔记 —— 信号_3</a>
     </h1>
 
     <div class="post-content">
@@ -480,16 +480,9 @@
 
 
 
-        服务器编程框架/IO模型
+        SIGHUP/SIGPIPE/SIGURG
 
-  本节先介绍了一下服务器的编程框架，主要分为三个部分：IO处理单元、逻辑单元、网络存储单元。逻辑单元因服务器具体业务而异，网络存储单元不是必要的。而IO处理单元是网络编程中的重要部分。对应的IO模型一般有四种：阻塞IO、非阻塞IO + IO复用、非阻塞IO + SIGIO信号、异步IO。接下来我们将围绕这四种模型简单介绍。
-
-
-
-
-
-服务器编程框架
-介绍IO模型...
+  本节介绍了三个关于网络编程的信号：SIGHUP信号一般是当一个进程的控制终端被挂起时触发，由于网络后台程序没有控制终端，所以常常用来强制服务器重读配置文件。SIGPIPE信号则是往一个读端关闭的管道或关闭的socket连接中写数据时触发，因为该信号的默认处理行为是关闭程序，所以我们必须处理该信号。SIGURG信号的作用是内核通知应用程序带外数...
       </p>
     </div>
 
@@ -508,7 +501,533 @@
 
 
 <em class=""
-    data-ts="1686811080"
+    data-ts="1688453040"
+    data-df="ll"
+    >
+  Jul  4, 2023
+</em>
+
+
+        <!-- categories -->
+        
+          <i class="far fa-folder-open fa-fw"></i>
+          <span>
+          
+            Reading Notes,
+            Linux高性能服务器编程
+          </span>
+        
+
+      </div>
+
+      
+
+    </div> <!-- .post-meta -->
+
+  </div> <!-- .post-review -->
+
+
+
+  <div class="post-preview">
+    <h1>
+      <a href="/posts/%E4%BF%A1%E5%8F%B7_2/">读书笔记 —— 信号_2</a>
+    </h1>
+
+    <div class="post-content">
+      <p>
+        
+
+
+
+
+
+        signal/sigaction/sigset_t/sigprocmask/sigpending
+
+  本节继续探讨关于信号的一些内容，Linux中可以通过signal调用和sigaction调用来为信号设置一个处理函数，后者相比前者功能更加强壮且实现更加健壮。此外，sigaction函数其中一个参数sa_mask可以设置信号掩码，它的类型是sigset_t。我们通常采用sigset_t结构...
+      </p>
+    </div>
+
+    <div class="post-meta text-muted d-flex">
+      <div class="mr-auto">
+
+        <!-- posted date -->
+        <i class="far fa-calendar fa-fw"></i>
+        <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+
+<em class=""
+    data-ts="1688373540"
+    data-df="ll"
+    >
+  Jul  3, 2023
+</em>
+
+
+        <!-- categories -->
+        
+          <i class="far fa-folder-open fa-fw"></i>
+          <span>
+          
+            Reading Notes,
+            Linux高性能服务器编程
+          </span>
+        
+
+      </div>
+
+      
+
+    </div> <!-- .post-meta -->
+
+  </div> <!-- .post-review -->
+
+
+
+  <div class="post-preview">
+    <h1>
+      <a href="/posts/%E4%BF%A1%E5%8F%B7_1/">读书笔记 —— 信号_1</a>
+    </h1>
+
+    <div class="post-content">
+      <p>
+        
+
+
+
+
+
+        信号/kill
+
+  本节初步介绍了信号。信号是由用户、系统或者进程发送给目标进程的信息，以通知目标进程某个状态的改变或系统异常。我们介绍了信号的来源。进程可以通过kill系统调用向其他进程发送信号，接收信号的进程需要定义一个接收函数来处理。Linux的可用信号都定义在bits/signum.h头文件中，我们列举了标准信号的值及其含义。最后信号可能会中断某些处于阻塞状态的系统调用，并设置er...
+      </p>
+    </div>
+
+    <div class="post-meta text-muted d-flex">
+      <div class="mr-auto">
+
+        <!-- posted date -->
+        <i class="far fa-calendar fa-fw"></i>
+        <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+
+<em class=""
+    data-ts="1687954800"
+    data-df="ll"
+    >
+  Jun 28, 2023
+</em>
+
+
+        <!-- categories -->
+        
+          <i class="far fa-folder-open fa-fw"></i>
+          <span>
+          
+            Reading Notes,
+            Linux高性能服务器编程
+          </span>
+        
+
+      </div>
+
+      
+
+    </div> <!-- .post-meta -->
+
+  </div> <!-- .post-review -->
+
+
+
+  <div class="post-preview">
+    <h1>
+      <a href="/posts/IO%E5%A4%8D%E7%94%A8_poll/">读书笔记 —— IO复用_poll</a>
+    </h1>
+
+    <div class="post-content">
+      <p>
+        
+
+
+
+
+
+        poll
+
+  本节讲解了IO复用的其中一种系统调用——poll。我们首先介绍了poll的API。它的就绪条件和select调用一样，所以我们不再过多阐述。在最后我们将三种IO复用技术进行比较。
+
+
+
+
+
+poll API
+
+下面是poll的系统调用，功能和select类似，在指定时间内轮询一定数量的文件描述符，测试其中是否有就绪项，其函数定义如下：
+
+#include &amp;lt;poll.h...
+      </p>
+    </div>
+
+    <div class="post-meta text-muted d-flex">
+      <div class="mr-auto">
+
+        <!-- posted date -->
+        <i class="far fa-calendar fa-fw"></i>
+        <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+
+<em class=""
+    data-ts="1687779060"
+    data-df="ll"
+    >
+  Jun 26, 2023
+</em>
+
+
+        <!-- categories -->
+        
+          <i class="far fa-folder-open fa-fw"></i>
+          <span>
+          
+            Reading Notes,
+            Linux高性能服务器编程
+          </span>
+        
+
+      </div>
+
+      
+
+    </div> <!-- .post-meta -->
+
+  </div> <!-- .post-review -->
+
+
+
+  <div class="post-preview">
+    <h1>
+      <a href="/posts/IO%E5%A4%8D%E7%94%A8_epoll/">读书笔记 —— IO复用_epoll</a>
+    </h1>
+
+    <div class="post-content">
+      <p>
+        
+
+
+
+
+
+        epoll
+
+  本节讲解了IO复用的其中一种系统调用——epoll。epoll其他两种IO复用(select和poll)调用方式不同，它不是单个函数，而是使用一组函数来完成。而且它将文件描述符上的事件都放到内核的一个事件表中，不需要像select和poll那样每次调用都重复传入文件描述符集合或事件集合。我们详细介绍了epoll相关的一系列API，然后介绍了epoll的两种工作模式：LT模式...
+      </p>
+    </div>
+
+    <div class="post-meta text-muted d-flex">
+      <div class="mr-auto">
+
+        <!-- posted date -->
+        <i class="far fa-calendar fa-fw"></i>
+        <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+
+<em class=""
+    data-ts="1687694400"
+    data-df="ll"
+    >
+  Jun 25, 2023
+</em>
+
+
+        <!-- categories -->
+        
+          <i class="far fa-folder-open fa-fw"></i>
+          <span>
+          
+            Reading Notes,
+            Linux高性能服务器编程
+          </span>
+        
+
+      </div>
+
+      
+
+    </div> <!-- .post-meta -->
+
+  </div> <!-- .post-review -->
+
+
+
+  <div class="post-preview">
+    <h1>
+      <a href="/posts/IO%E5%A4%8D%E7%94%A8_select/">读书笔记 —— IO复用_select</a>
+    </h1>
+
+    <div class="post-content">
+      <p>
+        
+
+
+
+
+
+        select
+
+  本节讲解了IO复用的其中一种系统调用——select。我们首先介绍了select的API，然后列举了触发select的就绪条件的情况。最后通过处理带外数据的例子来展示select调用的用法。
+
+
+
+
+
+IO复用
+
+IO复用的场景：
+
+  客户端程序要同时处理多个socket
+  客户端程序要同时处理用户输入和网络连接
+  TCP服务器要同时处理监听socket和连接soc...
+      </p>
+    </div>
+
+    <div class="post-meta text-muted d-flex">
+      <div class="mr-auto">
+
+        <!-- posted date -->
+        <i class="far fa-calendar fa-fw"></i>
+        <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+
+<em class=""
+    data-ts="1687266900"
+    data-df="ll"
+    >
+  Jun 20, 2023
+</em>
+
+
+        <!-- categories -->
+        
+          <i class="far fa-folder-open fa-fw"></i>
+          <span>
+          
+            Reading Notes,
+            Linux高性能服务器编程
+          </span>
+        
+
+      </div>
+
+      
+
+    </div> <!-- .post-meta -->
+
+  </div> <!-- .post-review -->
+
+
+
+  <div class="post-preview">
+    <h1>
+      <a href="/posts/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B%E6%8F%90%E5%8D%87%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%80%A7%E8%83%BD/">读书笔记 —— 网络编程_提升服务器性能</a>
+    </h1>
+
+    <div class="post-content">
+      <p>
+        
+
+
+
+
+
+        池/数据复制/上下文切换和锁
+
+  本节简单介绍了提升服务器性能的三个建议。首先，我们可以用池代替资源的动态分配，因为系统资源的分配是相当耗时的，池可以随用随放，提高效率。其次，我们应该减少程序内数据的复制。最后，我们探讨了上下文切换和加锁会占用CPU时间和系统资源，一个高性能的服务器设计应该尽量减少上下文切换和加锁。
+
+
+
+
+
+池
+
+随着科技的发展，硬件的性能大幅提升，在许多编程模式中，常...
+      </p>
+    </div>
+
+    <div class="post-meta text-muted d-flex">
+      <div class="mr-auto">
+
+        <!-- posted date -->
+        <i class="far fa-calendar fa-fw"></i>
+        <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+
+<em class=""
+    data-ts="1686898800"
+    data-df="ll"
+    >
+  Jun 16, 2023
+</em>
+
+
+        <!-- categories -->
+        
+          <i class="far fa-folder-open fa-fw"></i>
+          <span>
+          
+            Reading Notes,
+            Linux高性能服务器编程
+          </span>
+        
+
+      </div>
+
+      
+
+    </div> <!-- .post-meta -->
+
+  </div> <!-- .post-review -->
+
+
+
+  <div class="post-preview">
+    <h1>
+      <a href="/posts/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B%E9%80%BB%E8%BE%91%E5%8D%95%E5%85%83%E4%B9%8B%E6%9C%89%E9%99%90%E7%8A%B6%E6%80%81%E6%9C%BA/">读书笔记 —— 网络编程_逻辑单元之有限状态机</a>
+    </h1>
+
+    <div class="post-content">
+      <p>
+        
+
+
+
+
+
+        有限状态机
+
+  本节我们介绍逻辑单元内部的一种高效编程方法：有限状态机。因为某些应用层协议的头部含有数据报类型字段，我们可以把每种类型映射为逻辑单元的一种执行状态，然后通过有限状态机模型实现状态之间的转移。接下来我们将通过解析HTTP请求头的例子来说明有限状态机在逻辑单元的应用。
+
+
+
+
+
+有限状态机
+
+有些应用层协议的头部包含数据报类型字段，我们可以将每种类型映射为逻辑单元的一种执行状态...
+      </p>
+    </div>
+
+    <div class="post-meta text-muted d-flex">
+      <div class="mr-auto">
+
+        <!-- posted date -->
+        <i class="far fa-calendar fa-fw"></i>
+        <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+
+<em class=""
+    data-ts="1686886020"
+    data-df="ll"
+    >
+  Jun 16, 2023
+</em>
+
+
+        <!-- categories -->
+        
+          <i class="far fa-folder-open fa-fw"></i>
+          <span>
+          
+            Reading Notes,
+            Linux高性能服务器编程
+          </span>
+        
+
+      </div>
+
+      
+
+    </div> <!-- .post-meta -->
+
+  </div> <!-- .post-review -->
+
+
+
+  <div class="post-preview">
+    <h1>
+      <a href="/posts/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B%E5%B9%B6%E5%8F%91%E6%A8%A1%E5%BC%8F/">读书笔记 —— 网络编程_并发模式</a>
+    </h1>
+
+    <div class="post-content">
+      <p>
+        
+
+
+
+
+
+        半同步/半异步模式/半同步/半反应堆模式/领导者/追随者模式
+
+  本节介绍了网络编程设计中的两种并发模式：半同步/半异步模式和领导者/追随者模式。半同步/半异步模式是指同步线程用于处理客户逻辑，异步线程用于处理IO事件。它有一种变体：半同步/半反应堆模式。半同步/半反应堆模式中异步线程只有主线程，工作线程负责处理IO读写和业务逻辑，是同步线程。接着我们介绍了领导者/追随者模式，它是指多个工...
+      </p>
+    </div>
+
+    <div class="post-meta text-muted d-flex">
+      <div class="mr-auto">
+
+        <!-- posted date -->
+        <i class="far fa-calendar fa-fw"></i>
+        <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+
+<em class=""
+    data-ts="1686819660"
     data-df="ll"
     >
   Jun 15, 2023
@@ -537,7 +1056,7 @@
 
   <div class="post-preview">
     <h1>
-      <a href="/posts/%E6%94%B9%E5%8F%98%E7%A8%8B%E5%BA%8F%E5%B7%A5%E4%BD%9C%E7%9B%AE%E5%BD%95%E5%8F%8A%E5%90%8E%E5%8F%B0%E8%BF%90%E8%A1%8C/">读书笔记 —— 改变程序工作目录及后台运行</a>
+      <a href="/posts/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B%E4%BA%8B%E4%BB%B6%E5%A4%84%E7%90%86%E6%A8%A1%E5%BC%8F/">读书笔记 —— 网络编程_事件处理模式</a>
     </h1>
 
     <div class="post-content">
@@ -548,16 +1067,9 @@
 
 
 
-        getcwd/chdir/chroot/daemon
+        Reactor/Proactor
 
-  本节介绍了如何获取进程当前工作目录，如何改变进程当前工作目录及根目录。不过需要注意，只有特权进程才能改变根目录。最后我们介绍了daemon函数实现使程序以守护进程的方式后台运行，并简单还原了它的源码。
-
-
-
-
-
-getcwd
-有些服务器程序需要改变工作目录和根目录，比如对于Web服务器来说，逻辑根目录不是“/”，而是站点的根目录(一...
+  本节介绍了网络编程中两种高效的事件处理模式：Reactor模式和Proactor模式。同步IO模型通常用于Reactor模式，异步IO模型通常用于Proactor模式。但同步IO模型也能模拟出Proactor模式。Reactor模式指主线程只负责监听文件描述符是否有事件发生，其他实质性的工作，比如读写数据、业务处理都交给工作线程负责。而Proactor...
       </p>
     </div>
 
@@ -576,536 +1088,10 @@ getcwd
 
 
 <em class=""
-    data-ts="1686730380"
+    data-ts="1686815340"
     data-df="ll"
     >
-  Jun 14, 2023
-</em>
-
-
-        <!-- categories -->
-        
-          <i class="far fa-folder-open fa-fw"></i>
-          <span>
-          
-            Reading Notes,
-            Linux高性能服务器编程
-          </span>
-        
-
-      </div>
-
-      
-
-    </div> <!-- .post-meta -->
-
-  </div> <!-- .post-review -->
-
-
-
-  <div class="post-preview">
-    <h1>
-      <a href="/posts/%E7%B3%BB%E7%BB%9F%E8%B5%84%E6%BA%90%E9%99%90%E5%88%B6/">读书笔记 —— 系统资源限制</a>
-    </h1>
-
-    <div class="post-content">
-      <p>
-        
-
-
-
-
-
-        getrlimit/setrlimit
-
-  本节介绍了getrlimit和setrlimit函数，它们可以在程序内修改系统资源的软限制和硬限制。软限制是建议性的、最好不要超过该值的限制，硬限制是软限制的上限，是绝对不能超过的。此外，通过ulimit命令和配置文件也可以修改系统资源的限制。
-
-
-
-
-
-getrlimit/setrlimit
-Linux上运行的程序会受到资源限制的影响，比如物理...
-      </p>
-    </div>
-
-    <div class="post-meta text-muted d-flex">
-      <div class="mr-auto">
-
-        <!-- posted date -->
-        <i class="far fa-calendar fa-fw"></i>
-        <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-
-<em class=""
-    data-ts="1686724680"
-    data-df="ll"
-    >
-  Jun 14, 2023
-</em>
-
-
-        <!-- categories -->
-        
-          <i class="far fa-folder-open fa-fw"></i>
-          <span>
-          
-            Reading Notes,
-            Linux高性能服务器编程
-          </span>
-        
-
-      </div>
-
-      
-
-    </div> <!-- .post-meta -->
-
-  </div> <!-- .post-review -->
-
-
-
-  <div class="post-preview">
-    <h1>
-      <a href="/posts/%E7%94%A8%E6%88%B7-%E8%BF%9B%E7%A8%8B%E4%BF%A1%E6%81%AF/">读书笔记 —— 用户、进程信息</a>
-    </h1>
-
-    <div class="post-content">
-      <p>
-        
-
-
-
-
-
-        UID/EUID/GID/EGID/SID
-
-  本节介绍了用户、进程相关的只是。进程的用户ID分为真实用户ID和有效用户ID，有效用户ID指运行程序的用户能够拥有该程序有效用户的权限。类似的，进程的组用户ID也分为真实组ID和有效组ID，运行目标程序的组用户提供有效组的权限。Linux中，每一个进程都隶属于一个进程组。Linux系统了getpgid和setpgid函数来获取和设置目标进程的...
-      </p>
-    </div>
-
-    <div class="post-meta text-muted d-flex">
-      <div class="mr-auto">
-
-        <!-- posted date -->
-        <i class="far fa-calendar fa-fw"></i>
-        <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-
-<em class=""
-    data-ts="1686621660"
-    data-df="ll"
-    >
-  Jun 13, 2023
-</em>
-
-
-        <!-- categories -->
-        
-          <i class="far fa-folder-open fa-fw"></i>
-          <span>
-          
-            Reading Notes,
-            Linux高性能服务器编程
-          </span>
-        
-
-      </div>
-
-      
-
-    </div> <!-- .post-meta -->
-
-  </div> <!-- .post-review -->
-
-
-
-  <div class="post-preview">
-    <h1>
-      <a href="/posts/Linux%E7%B3%BB%E7%BB%9F%E6%97%A5%E5%BF%97/">读书笔记 —— Linux系统日志</a>
-    </h1>
-
-    <div class="post-content">
-      <p>
-        
-
-
-
-
-
-        syslog/openlog/setlogmask/closelog
-
-  本节介绍了Linux系统中提供的syslogd守护进程，它是用来处理系统日志的。系统日志分为内核日志和用户进程输出的日志。我们简单介绍了这两种日志的生成过程。日志可以通过配置文件修改各种配置项，比如将不同的消息输出到指定的日志文件中。用户程序通过syslog函数输出系统日志。还可以通过openlog函数结构化日志内容...
-      </p>
-    </div>
-
-    <div class="post-meta text-muted d-flex">
-      <div class="mr-auto">
-
-        <!-- posted date -->
-        <i class="far fa-calendar fa-fw"></i>
-        <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-
-<em class=""
-    data-ts="1686535080"
-    data-df="ll"
-    >
-  Jun 12, 2023
-</em>
-
-
-        <!-- categories -->
-        
-          <i class="far fa-folder-open fa-fw"></i>
-          <span>
-          
-            Reading Notes,
-            Linux高性能服务器编程
-          </span>
-        
-
-      </div>
-
-      
-
-    </div> <!-- .post-meta -->
-
-  </div> <!-- .post-review -->
-
-
-
-  <div class="post-preview">
-    <h1>
-      <a href="/posts/%E9%93%BA%E7%93%B7%E7%A0%96/">刷题笔记 ——  铺瓷砖</a>
-    </h1>
-
-    <div class="post-content">
-      <p>
-        
-
-
-
-
-
-        回溯
-
-  该题是回溯问题，问题规模比较小，所以我们可以创建出数组来模拟铺砖的情况。
-
-
-
-
-
-题目
-你是一位施工队的工长，根据设计师的要求准备为一套设计风格独特的房子进行室内装修。
-
-房子的客厅大小为 n x m，为保持极简的风格，需要使用尽可能少的 正方形 瓷砖来铺盖地面。
-
-假设正方形瓷砖的规格不限，边长都是整数。
-
-请你帮设计师计算一下，最少需要用到多少块方形瓷砖？
-
-例子
-
-
-
-示...
-      </p>
-    </div>
-
-    <div class="post-meta text-muted d-flex">
-      <div class="mr-auto">
-
-        <!-- posted date -->
-        <i class="far fa-calendar fa-fw"></i>
-        <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-
-<em class=""
-    data-ts="1686227940"
-    data-df="ll"
-    >
-  Jun  8, 2023
-</em>
-
-
-        <!-- categories -->
-        
-          <i class="far fa-folder-open fa-fw"></i>
-          <span>
-          
-            leetcode
-          </span>
-        
-
-      </div>
-
-      
-
-    </div> <!-- .post-meta -->
-
-  </div> <!-- .post-review -->
-
-
-
-  <div class="post-preview">
-    <h1>
-      <a href="/posts/%E9%AB%98%E7%BA%A7IO%E5%87%BD%E6%95%B0_3/">读书笔记 —— 高级IO函数_3</a>
-    </h1>
-
-    <div class="post-content">
-      <p>
-        
-
-
-
-
-
-        tee/fcntl
-
-  本节介绍了剩下两个IO函数。第一个是tee函数，它可以在两个管道文件描述符之间复制数据，同样是零拷贝操作。通过与splice函数结合使用，可以实现高效的文件数据复制。fcntl函数则是修改文件描述符的属性和行为，在网络编程中，我们经常通过fcntl函数将socket设置为非阻塞状态。
-
-
-
-
-
-tee
-tee函数在两个管道文件描述符之间复制数据，它同样是零拷贝操作。...
-      </p>
-    </div>
-
-    <div class="post-meta text-muted d-flex">
-      <div class="mr-auto">
-
-        <!-- posted date -->
-        <i class="far fa-calendar fa-fw"></i>
-        <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-
-<em class=""
-    data-ts="1686191040"
-    data-df="ll"
-    >
-  Jun  8, 2023
-</em>
-
-
-        <!-- categories -->
-        
-          <i class="far fa-folder-open fa-fw"></i>
-          <span>
-          
-            Reading Notes,
-            Linux高性能服务器编程
-          </span>
-        
-
-      </div>
-
-      
-
-    </div> <!-- .post-meta -->
-
-  </div> <!-- .post-review -->
-
-
-
-  <div class="post-preview">
-    <h1>
-      <a href="/posts/%E9%AB%98%E7%BA%A7IO%E5%87%BD%E6%95%B0_2/">读书笔记 —— 高级IO函数_2</a>
-    </h1>
-
-    <div class="post-content">
-      <p>
-        
-
-
-
-
-
-        sendfile/mmap/munmap/splice
-
-  本节介绍了另外一些高级IO函数。其中sendfile函数如其名字一样，将文件传输给socket文件描述符，它是专门为网络传输设计的，而且传输过程在内核执行，不需要先拷贝到用户缓冲区中，也不需要调用read函数读取文件，所以它更加高效。mmap函数可以申请一段内存，这段内存既可以作为共享内存，也可以将文件映射其中。当我们使用完毕时，...
-      </p>
-    </div>
-
-    <div class="post-meta text-muted d-flex">
-      <div class="mr-auto">
-
-        <!-- posted date -->
-        <i class="far fa-calendar fa-fw"></i>
-        <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-
-<em class=""
-    data-ts="1686124440"
-    data-df="ll"
-    >
-  Jun  7, 2023
-</em>
-
-
-        <!-- categories -->
-        
-          <i class="far fa-folder-open fa-fw"></i>
-          <span>
-          
-            Reading Notes,
-            Linux高性能服务器编程
-          </span>
-        
-
-      </div>
-
-      
-
-    </div> <!-- .post-meta -->
-
-  </div> <!-- .post-review -->
-
-
-
-  <div class="post-preview">
-    <h1>
-      <a href="/posts/132%E6%A8%A1%E5%BC%8F/">刷题笔记 ——  132 模式</a>
-    </h1>
-
-    <div class="post-content">
-      <p>
-        
-
-
-
-
-
-        单调栈
-
-  该题也是单调栈的一种，相比之前讲解过的单调栈问题，该题是利用132模式的特点来求解。我们可以从中学到一些技巧：1. 利用单调栈出栈的元素；2. 用数组表示一个过程的最小值。
-
-
-
-
-
-题目
-给你一个整数数组 nums ，数组中共有 n 个整数。132 模式的子序列 由三个整数 nums[i]、nums[j] 和 nums[k] 组成，并同时满足：i &amp;lt; j &amp;lt; k ...
-      </p>
-    </div>
-
-    <div class="post-meta text-muted d-flex">
-      <div class="mr-auto">
-
-        <!-- posted date -->
-        <i class="far fa-calendar fa-fw"></i>
-        <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-
-<em class=""
-    data-ts="1685875800"
-    data-df="ll"
-    >
-  Jun  4, 2023
-</em>
-
-
-        <!-- categories -->
-        
-          <i class="far fa-folder-open fa-fw"></i>
-          <span>
-          
-            leetcode
-          </span>
-        
-
-      </div>
-
-      
-
-    </div> <!-- .post-meta -->
-
-  </div> <!-- .post-review -->
-
-
-
-  <div class="post-preview">
-    <h1>
-      <a href="/posts/%E9%AB%98%E7%BA%A7IO%E5%87%BD%E6%95%B0_1/">读书笔记 —— 高级IO函数_1</a>
-    </h1>
-
-    <div class="post-content">
-      <p>
-        
-
-
-
-
-
-        pipe/socketpair/dup/dup2/readv/writev
-
-  本节介绍了Linux中一些高级IO函数。管道是进程间常用的IO方式之一，通过pipe系统调用我们可以创建一对管道。但是需要注意，pipe创建的管道中，fd[0]只能用于读，fd[1]只能用于写，不能反过来。而socket基础API中提供了socketpair调用，它可以创建一对双端管道。此外，我们将标准输入或标...
-      </p>
-    </div>
-
-    <div class="post-meta text-muted d-flex">
-      <div class="mr-auto">
-
-        <!-- posted date -->
-        <i class="far fa-calendar fa-fw"></i>
-        <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-
-<em class=""
-    data-ts="1685875740"
-    data-df="ll"
-    >
-  Jun  4, 2023
+  Jun 15, 2023
 </em>
 
 
@@ -1329,9 +1315,24 @@ tee函数在两个管道文件描述符之间复制数据，它同样是零拷�
     
 
     
+      <!-- hide number -->
+      
+    
+
+  
+
+    
+    
+    
+    
+    
+
+    
+
+    
       <!-- show number -->
       <li class="page-item ">
-        <a class="page-link btn-box-shadow" href="/page11">11</a>
+        <a class="page-link btn-box-shadow" href="/page12">12</a>
       </li>
     
 
@@ -1340,7 +1341,7 @@ tee函数在两个管道文件描述符之间复制数据，它同样是零拷�
   <!-- mobile pagination -->
   <li class="page-index align-middle">
     <span>5</span>
-    <span class="text-muted">/ 11</span>
+    <span class="text-muted">/ 12</span>
   </li>
 
   <!-- right arrow -->
@@ -1663,305 +1664,6 @@ tee函数在两个管道文件描述符之间复制数据，它同样是零拷�
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -1981,215 +1683,6 @@ tee函数在两个管道文件描述符之间复制数据，它同样是零拷�
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -2624,195 +2117,50 @@ tee函数在两个管道文件描述符之间复制数据，它同样是零拷�
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
       
         
         
 
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -3442,6 +2790,96 @@ tee函数在两个管道文件描述符之间复制数据，它同样是零拷�
     
     
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
       
         
         
@@ -3661,6 +3099,684 @@ tee函数在两个管道文件描述符之间复制数据，它同样是零拷�
     
     
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
       
     
   
@@ -3697,6 +3813,21 @@ tee函数在两个管道文件描述符之间复制数据，它同样是零拷�
         
         
 
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -4226,305 +4357,6 @@ tee函数在两个管道文件描述符之间复制数据，它同样是零拷�
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -4544,215 +4376,6 @@ tee函数在两个管道文件描述符之间复制数据，它同样是零拷�
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -5187,195 +4810,50 @@ tee函数在两个管道文件描述符之间复制数据，它同样是零拷�
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
       
         
         
 
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -6005,6 +5483,96 @@ tee函数在两个管道文件描述符之间复制数据，它同样是零拷�
     
     
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
       
         
         
@@ -6224,6 +5792,684 @@ tee函数在两个管道文件描述符之间复制数据，它同样是零拷�
     
     
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
       
     
   
@@ -6260,6 +6506,21 @@ tee函数在两个管道文件描述符之间复制数据，它同样是零拷�
         
         
 
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
