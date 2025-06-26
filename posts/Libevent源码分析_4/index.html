@@ -35,13 +35,13 @@
 
   
     <!-- Begin Jekyll SEO tag v2.8.0 -->
-<meta name="generator" content="Jekyll v4.3.2" />
+<meta name="generator" content="Jekyll v4.4.1" />
 <meta property="og:title" content="读书笔记 —— Libevent源码分析_4" />
 <meta property="og:locale" content="en" />
 <meta name="description" content="eventop/event_base 本节介绍了Libevent中两个重要的结构体。第一个是eventop结构体，它封装了IO复用机制的一些必要操作，目的是为event_base提供统一的IO复用接口。Libevent会检测当前系统支持IO复用机制，如果存在多种支持的IO复用机制，则根据eventops数组中的优先级来选取。第二个是event_base结构体，它是Libevent的Reactor，存储各种事件队列、定时器队列、调度等信息。" />
 <meta property="og:description" content="eventop/event_base 本节介绍了Libevent中两个重要的结构体。第一个是eventop结构体，它封装了IO复用机制的一些必要操作，目的是为event_base提供统一的IO复用接口。Libevent会检测当前系统支持IO复用机制，如果存在多种支持的IO复用机制，则根据eventops数组中的优先级来选取。第二个是event_base结构体，它是Libevent的Reactor，存储各种事件队列、定时器队列、调度等信息。" />
-<link rel="canonical" href="http://localhost:4000/posts/Libevent%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90_4/" />
-<meta property="og:url" content="http://localhost:4000/posts/Libevent%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90_4/" />
+<link rel="canonical" href="https://fanventory.github.io/posts/Libevent%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90_4/" />
+<meta property="og:url" content="https://fanventory.github.io/posts/Libevent%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90_4/" />
 <meta property="og:site_name" content="Fanventory" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2023-07-09T14:56:00+08:00" />
@@ -49,7 +49,7 @@
 <meta property="twitter:title" content="读书笔记 —— Libevent源码分析_4" />
 <meta name="twitter:site" content="@Fanventory" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-07-09T14:56:00+08:00","datePublished":"2023-07-09T14:56:00+08:00","description":"eventop/event_base 本节介绍了Libevent中两个重要的结构体。第一个是eventop结构体，它封装了IO复用机制的一些必要操作，目的是为event_base提供统一的IO复用接口。Libevent会检测当前系统支持IO复用机制，如果存在多种支持的IO复用机制，则根据eventops数组中的优先级来选取。第二个是event_base结构体，它是Libevent的Reactor，存储各种事件队列、定时器队列、调度等信息。","headline":"读书笔记 —— Libevent源码分析_4","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/Libevent%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90_4/"},"url":"http://localhost:4000/posts/Libevent%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90_4/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-07-09T14:56:00+08:00","datePublished":"2023-07-09T14:56:00+08:00","description":"eventop/event_base 本节介绍了Libevent中两个重要的结构体。第一个是eventop结构体，它封装了IO复用机制的一些必要操作，目的是为event_base提供统一的IO复用接口。Libevent会检测当前系统支持IO复用机制，如果存在多种支持的IO复用机制，则根据eventops数组中的优先级来选取。第二个是event_base结构体，它是Libevent的Reactor，存储各种事件队列、定时器队列、调度等信息。","headline":"读书笔记 —— Libevent源码分析_4","mainEntityOfPage":{"@type":"WebPage","@id":"https://fanventory.github.io/posts/Libevent%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90_4/"},"url":"https://fanventory.github.io/posts/Libevent%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90_4/"}</script>
 <!-- End Jekyll SEO tag -->
 
   
@@ -1072,19 +1072,19 @@
 
     
       
-        <a href="https://twitter.com/intent/tweet?text=%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0+%E2%80%94%E2%80%94+Libevent%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90_4+-+Fanventory&url=http%3A%2F%2Flocalhost%3A4000%2Fposts%2FLibevent%25E6%25BA%2590%25E7%25A0%2581%25E5%2588%2586%25E6%259E%2590_4%2F" data-toggle="tooltip" data-placement="top"
+        <a href="https://twitter.com/intent/tweet?text=%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0+%E2%80%94%E2%80%94+Libevent%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90_4+-+Fanventory&url=https%3A%2F%2Ffanventory.github.io%2Fposts%2FLibevent%25E6%25BA%2590%25E7%25A0%2581%25E5%2588%2586%25E6%259E%2590_4%2F" data-toggle="tooltip" data-placement="top"
           title="Twitter" target="_blank" rel="noopener" aria-label="Twitter">
           <i class="fa-fw fab fa-twitter"></i>
         </a>
     
       
-        <a href="https://www.facebook.com/sharer/sharer.php?title=%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0+%E2%80%94%E2%80%94+Libevent%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90_4+-+Fanventory&u=http%3A%2F%2Flocalhost%3A4000%2Fposts%2FLibevent%25E6%25BA%2590%25E7%25A0%2581%25E5%2588%2586%25E6%259E%2590_4%2F" data-toggle="tooltip" data-placement="top"
+        <a href="https://www.facebook.com/sharer/sharer.php?title=%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0+%E2%80%94%E2%80%94+Libevent%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90_4+-+Fanventory&u=https%3A%2F%2Ffanventory.github.io%2Fposts%2FLibevent%25E6%25BA%2590%25E7%25A0%2581%25E5%2588%2586%25E6%259E%2590_4%2F" data-toggle="tooltip" data-placement="top"
           title="Facebook" target="_blank" rel="noopener" aria-label="Facebook">
           <i class="fa-fw fab fa-facebook-square"></i>
         </a>
     
       
-        <a href="https://t.me/share/url?url=http%3A%2F%2Flocalhost%3A4000%2Fposts%2FLibevent%25E6%25BA%2590%25E7%25A0%2581%25E5%2588%2586%25E6%259E%2590_4%2F&text=%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0+%E2%80%94%E2%80%94+Libevent%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90_4+-+Fanventory" data-toggle="tooltip" data-placement="top"
+        <a href="https://t.me/share/url?url=https%3A%2F%2Ffanventory.github.io%2Fposts%2FLibevent%25E6%25BA%2590%25E7%25A0%2581%25E5%2588%2586%25E6%259E%2590_4%2F&text=%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0+%E2%80%94%E2%80%94+Libevent%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90_4+-+Fanventory" data-toggle="tooltip" data-placement="top"
           title="Telegram" target="_blank" rel="noopener" aria-label="Telegram">
           <i class="fa-fw fab fa-telegram"></i>
         </a>
@@ -8235,7 +8235,7 @@ Libevent是一款开源的高性能IO框架库，使用Libevent的案例包括�
     <div class="d-flex justify-content-between align-items-center text-muted ml-md-3 mr-md-3">
       <div class="footer-left">
         <p class="mb-0">
-          © 2023
+          © 2025
           <a href="https://twitter.com/username">Fanventory</a>.
           
           <span data-toggle="tooltip" data-placement="top"

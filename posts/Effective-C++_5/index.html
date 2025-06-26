@@ -35,13 +35,13 @@
 
   
     <!-- Begin Jekyll SEO tag v2.8.0 -->
-<meta name="generator" content="Jekyll v4.3.2" />
+<meta name="generator" content="Jekyll v4.4.1" />
 <meta property="og:title" content="读书笔记 —— Effective C++(5)" />
 <meta property="og:locale" content="en" />
 <meta name="description" content="上一节中我们介绍了用智能指针来管理资源，这一节我们将再次强调资源管理的重要性。我们简单介绍一些资源管理方面容易疏忽的小细节，这些小细节可能会导致你看似使用了正确的语法，但结果却造成了资源内存泄漏。首先我们可能会遇到一些无法用智能指针的情况，这时候如果还想完成自动释放功能，需要自己手写一个类来封装原来的类。这个过程中需要注意的细节是复制行为的问题，复制过程中我们该如何处理封装类呢？这个问题的细节将在接下来做仔细探讨。接着我们讲述了实际应用中需要原始指针而不是智能指针的情况，介绍了怎么将智能指针转换成原始指针。然后我们介绍new和delete对象数组时容易造成内存泄漏的情况，要记住有[]则[]，无[]则无[]。最后我们建议用智能指针封装new出来的对象时，最好独立一行编写，否则它也有小概率造成内存泄漏。资源泄漏方面的细节有很多，需要我们在实际编写代码时处处小心，积累经验，避免犯错。" />
 <meta property="og:description" content="上一节中我们介绍了用智能指针来管理资源，这一节我们将再次强调资源管理的重要性。我们简单介绍一些资源管理方面容易疏忽的小细节，这些小细节可能会导致你看似使用了正确的语法，但结果却造成了资源内存泄漏。首先我们可能会遇到一些无法用智能指针的情况，这时候如果还想完成自动释放功能，需要自己手写一个类来封装原来的类。这个过程中需要注意的细节是复制行为的问题，复制过程中我们该如何处理封装类呢？这个问题的细节将在接下来做仔细探讨。接着我们讲述了实际应用中需要原始指针而不是智能指针的情况，介绍了怎么将智能指针转换成原始指针。然后我们介绍new和delete对象数组时容易造成内存泄漏的情况，要记住有[]则[]，无[]则无[]。最后我们建议用智能指针封装new出来的对象时，最好独立一行编写，否则它也有小概率造成内存泄漏。资源泄漏方面的细节有很多，需要我们在实际编写代码时处处小心，积累经验，避免犯错。" />
-<link rel="canonical" href="http://localhost:4000/posts/Effective-C++_5/" />
-<meta property="og:url" content="http://localhost:4000/posts/Effective-C++_5/" />
+<link rel="canonical" href="https://fanventory.github.io/posts/Effective-C++_5/" />
+<meta property="og:url" content="https://fanventory.github.io/posts/Effective-C++_5/" />
 <meta property="og:site_name" content="Fanventory" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2023-02-07T20:12:00+08:00" />
@@ -49,7 +49,7 @@
 <meta property="twitter:title" content="读书笔记 —— Effective C++(5)" />
 <meta name="twitter:site" content="@Fanventory" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-02-07T20:12:00+08:00","datePublished":"2023-02-07T20:12:00+08:00","description":"上一节中我们介绍了用智能指针来管理资源，这一节我们将再次强调资源管理的重要性。我们简单介绍一些资源管理方面容易疏忽的小细节，这些小细节可能会导致你看似使用了正确的语法，但结果却造成了资源内存泄漏。首先我们可能会遇到一些无法用智能指针的情况，这时候如果还想完成自动释放功能，需要自己手写一个类来封装原来的类。这个过程中需要注意的细节是复制行为的问题，复制过程中我们该如何处理封装类呢？这个问题的细节将在接下来做仔细探讨。接着我们讲述了实际应用中需要原始指针而不是智能指针的情况，介绍了怎么将智能指针转换成原始指针。然后我们介绍new和delete对象数组时容易造成内存泄漏的情况，要记住有[]则[]，无[]则无[]。最后我们建议用智能指针封装new出来的对象时，最好独立一行编写，否则它也有小概率造成内存泄漏。资源泄漏方面的细节有很多，需要我们在实际编写代码时处处小心，积累经验，避免犯错。","headline":"读书笔记 —— Effective C++(5)","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/Effective-C++_5/"},"url":"http://localhost:4000/posts/Effective-C++_5/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-02-07T20:12:00+08:00","datePublished":"2023-02-07T20:12:00+08:00","description":"上一节中我们介绍了用智能指针来管理资源，这一节我们将再次强调资源管理的重要性。我们简单介绍一些资源管理方面容易疏忽的小细节，这些小细节可能会导致你看似使用了正确的语法，但结果却造成了资源内存泄漏。首先我们可能会遇到一些无法用智能指针的情况，这时候如果还想完成自动释放功能，需要自己手写一个类来封装原来的类。这个过程中需要注意的细节是复制行为的问题，复制过程中我们该如何处理封装类呢？这个问题的细节将在接下来做仔细探讨。接着我们讲述了实际应用中需要原始指针而不是智能指针的情况，介绍了怎么将智能指针转换成原始指针。然后我们介绍new和delete对象数组时容易造成内存泄漏的情况，要记住有[]则[]，无[]则无[]。最后我们建议用智能指针封装new出来的对象时，最好独立一行编写，否则它也有小概率造成内存泄漏。资源泄漏方面的细节有很多，需要我们在实际编写代码时处处小心，积累经验，避免犯错。","headline":"读书笔记 —— Effective C++(5)","mainEntityOfPage":{"@type":"WebPage","@id":"https://fanventory.github.io/posts/Effective-C++_5/"},"url":"https://fanventory.github.io/posts/Effective-C++_5/"}</script>
 <!-- End Jekyll SEO tag -->
 
   
@@ -1151,19 +1151,19 @@
 
     
       
-        <a href="https://twitter.com/intent/tweet?text=%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0+%E2%80%94%E2%80%94+Effective+C%2B%2B%285%29+-+Fanventory&url=http%3A%2F%2Flocalhost%3A4000%2Fposts%2FEffective-C%2B%2B_5%2F" data-toggle="tooltip" data-placement="top"
+        <a href="https://twitter.com/intent/tweet?text=%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0+%E2%80%94%E2%80%94+Effective+C%2B%2B%285%29+-+Fanventory&url=https%3A%2F%2Ffanventory.github.io%2Fposts%2FEffective-C%2B%2B_5%2F" data-toggle="tooltip" data-placement="top"
           title="Twitter" target="_blank" rel="noopener" aria-label="Twitter">
           <i class="fa-fw fab fa-twitter"></i>
         </a>
     
       
-        <a href="https://www.facebook.com/sharer/sharer.php?title=%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0+%E2%80%94%E2%80%94+Effective+C%2B%2B%285%29+-+Fanventory&u=http%3A%2F%2Flocalhost%3A4000%2Fposts%2FEffective-C%2B%2B_5%2F" data-toggle="tooltip" data-placement="top"
+        <a href="https://www.facebook.com/sharer/sharer.php?title=%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0+%E2%80%94%E2%80%94+Effective+C%2B%2B%285%29+-+Fanventory&u=https%3A%2F%2Ffanventory.github.io%2Fposts%2FEffective-C%2B%2B_5%2F" data-toggle="tooltip" data-placement="top"
           title="Facebook" target="_blank" rel="noopener" aria-label="Facebook">
           <i class="fa-fw fab fa-facebook-square"></i>
         </a>
     
       
-        <a href="https://t.me/share/url?url=http%3A%2F%2Flocalhost%3A4000%2Fposts%2FEffective-C%2B%2B_5%2F&text=%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0+%E2%80%94%E2%80%94+Effective+C%2B%2B%285%29+-+Fanventory" data-toggle="tooltip" data-placement="top"
+        <a href="https://t.me/share/url?url=https%3A%2F%2Ffanventory.github.io%2Fposts%2FEffective-C%2B%2B_5%2F&text=%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0+%E2%80%94%E2%80%94+Effective+C%2B%2B%285%29+-+Fanventory" data-toggle="tooltip" data-placement="top"
           title="Telegram" target="_blank" rel="noopener" aria-label="Telegram">
           <i class="fa-fw fab fa-telegram"></i>
         </a>
@@ -8316,7 +8316,7 @@
     <div class="d-flex justify-content-between align-items-center text-muted ml-md-3 mr-md-3">
       <div class="footer-left">
         <p class="mb-0">
-          © 2023
+          © 2025
           <a href="https://twitter.com/username">Fanventory</a>.
           
           <span data-toggle="tooltip" data-placement="top"

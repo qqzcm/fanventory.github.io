@@ -35,13 +35,13 @@
 
   
     <!-- Begin Jekyll SEO tag v2.8.0 -->
-<meta name="generator" content="Jekyll v4.3.2" />
+<meta name="generator" content="Jekyll v4.4.1" />
 <meta property="og:title" content="读书笔记 —— Effective C++(3)" />
 <meta property="og:locale" content="en" />
 <meta name="description" content="这一节重点探讨构造函数、析构函数、以及赋值操作函数，他们与类的生命周期有关，其中有很多细节值得我们去思考。我们知道在类中如果没有显示声明构造函数、析构函数、copy构造函数、赋值重载函数，编译器则会自动生成这些函数。这些自动生成的函数在某些特殊情况下可能会出错。同时在某些特殊情况下，我们要拒绝自动生成这些函数（或者说让这些函数调用时失效）。当然自己显式定义这些函数是一个好的方法，但是有更方便的方法吗？当我们声明基类时，构造、析构函数往往要声明virtual。virtual析构函数有一些比较有意思的用法。最后当析构函数出现异常时，我们应该吞下或者直接中止，同时把异常的处理交给程序员而不是由析构函数抛出。最后，我们要注意不要在构造、析构函数内调用virtual函数，因为你调用的不是派生类的版本。" />
 <meta property="og:description" content="这一节重点探讨构造函数、析构函数、以及赋值操作函数，他们与类的生命周期有关，其中有很多细节值得我们去思考。我们知道在类中如果没有显示声明构造函数、析构函数、copy构造函数、赋值重载函数，编译器则会自动生成这些函数。这些自动生成的函数在某些特殊情况下可能会出错。同时在某些特殊情况下，我们要拒绝自动生成这些函数（或者说让这些函数调用时失效）。当然自己显式定义这些函数是一个好的方法，但是有更方便的方法吗？当我们声明基类时，构造、析构函数往往要声明virtual。virtual析构函数有一些比较有意思的用法。最后当析构函数出现异常时，我们应该吞下或者直接中止，同时把异常的处理交给程序员而不是由析构函数抛出。最后，我们要注意不要在构造、析构函数内调用virtual函数，因为你调用的不是派生类的版本。" />
-<link rel="canonical" href="http://localhost:4000/posts/Effective-C++_3/" />
-<meta property="og:url" content="http://localhost:4000/posts/Effective-C++_3/" />
+<link rel="canonical" href="https://fanventory.github.io/posts/Effective-C++_3/" />
+<meta property="og:url" content="https://fanventory.github.io/posts/Effective-C++_3/" />
 <meta property="og:site_name" content="Fanventory" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2022-12-08T19:43:00+08:00" />
@@ -49,7 +49,7 @@
 <meta property="twitter:title" content="读书笔记 —— Effective C++(3)" />
 <meta name="twitter:site" content="@Fanventory" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-12-08T19:43:00+08:00","datePublished":"2022-12-08T19:43:00+08:00","description":"这一节重点探讨构造函数、析构函数、以及赋值操作函数，他们与类的生命周期有关，其中有很多细节值得我们去思考。我们知道在类中如果没有显示声明构造函数、析构函数、copy构造函数、赋值重载函数，编译器则会自动生成这些函数。这些自动生成的函数在某些特殊情况下可能会出错。同时在某些特殊情况下，我们要拒绝自动生成这些函数（或者说让这些函数调用时失效）。当然自己显式定义这些函数是一个好的方法，但是有更方便的方法吗？当我们声明基类时，构造、析构函数往往要声明virtual。virtual析构函数有一些比较有意思的用法。最后当析构函数出现异常时，我们应该吞下或者直接中止，同时把异常的处理交给程序员而不是由析构函数抛出。最后，我们要注意不要在构造、析构函数内调用virtual函数，因为你调用的不是派生类的版本。","headline":"读书笔记 —— Effective C++(3)","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/Effective-C++_3/"},"url":"http://localhost:4000/posts/Effective-C++_3/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-12-08T19:43:00+08:00","datePublished":"2022-12-08T19:43:00+08:00","description":"这一节重点探讨构造函数、析构函数、以及赋值操作函数，他们与类的生命周期有关，其中有很多细节值得我们去思考。我们知道在类中如果没有显示声明构造函数、析构函数、copy构造函数、赋值重载函数，编译器则会自动生成这些函数。这些自动生成的函数在某些特殊情况下可能会出错。同时在某些特殊情况下，我们要拒绝自动生成这些函数（或者说让这些函数调用时失效）。当然自己显式定义这些函数是一个好的方法，但是有更方便的方法吗？当我们声明基类时，构造、析构函数往往要声明virtual。virtual析构函数有一些比较有意思的用法。最后当析构函数出现异常时，我们应该吞下或者直接中止，同时把异常的处理交给程序员而不是由析构函数抛出。最后，我们要注意不要在构造、析构函数内调用virtual函数，因为你调用的不是派生类的版本。","headline":"读书笔记 —— Effective C++(3)","mainEntityOfPage":{"@type":"WebPage","@id":"https://fanventory.github.io/posts/Effective-C++_3/"},"url":"https://fanventory.github.io/posts/Effective-C++_3/"}</script>
 <!-- End Jekyll SEO tag -->
 
   
@@ -1530,19 +1530,19 @@
 
     
       
-        <a href="https://twitter.com/intent/tweet?text=%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0+%E2%80%94%E2%80%94+Effective+C%2B%2B%283%29+-+Fanventory&url=http%3A%2F%2Flocalhost%3A4000%2Fposts%2FEffective-C%2B%2B_3%2F" data-toggle="tooltip" data-placement="top"
+        <a href="https://twitter.com/intent/tweet?text=%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0+%E2%80%94%E2%80%94+Effective+C%2B%2B%283%29+-+Fanventory&url=https%3A%2F%2Ffanventory.github.io%2Fposts%2FEffective-C%2B%2B_3%2F" data-toggle="tooltip" data-placement="top"
           title="Twitter" target="_blank" rel="noopener" aria-label="Twitter">
           <i class="fa-fw fab fa-twitter"></i>
         </a>
     
       
-        <a href="https://www.facebook.com/sharer/sharer.php?title=%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0+%E2%80%94%E2%80%94+Effective+C%2B%2B%283%29+-+Fanventory&u=http%3A%2F%2Flocalhost%3A4000%2Fposts%2FEffective-C%2B%2B_3%2F" data-toggle="tooltip" data-placement="top"
+        <a href="https://www.facebook.com/sharer/sharer.php?title=%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0+%E2%80%94%E2%80%94+Effective+C%2B%2B%283%29+-+Fanventory&u=https%3A%2F%2Ffanventory.github.io%2Fposts%2FEffective-C%2B%2B_3%2F" data-toggle="tooltip" data-placement="top"
           title="Facebook" target="_blank" rel="noopener" aria-label="Facebook">
           <i class="fa-fw fab fa-facebook-square"></i>
         </a>
     
       
-        <a href="https://t.me/share/url?url=http%3A%2F%2Flocalhost%3A4000%2Fposts%2FEffective-C%2B%2B_3%2F&text=%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0+%E2%80%94%E2%80%94+Effective+C%2B%2B%283%29+-+Fanventory" data-toggle="tooltip" data-placement="top"
+        <a href="https://t.me/share/url?url=https%3A%2F%2Ffanventory.github.io%2Fposts%2FEffective-C%2B%2B_3%2F&text=%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0+%E2%80%94%E2%80%94+Effective+C%2B%2B%283%29+-+Fanventory" data-toggle="tooltip" data-placement="top"
           title="Telegram" target="_blank" rel="noopener" aria-label="Telegram">
           <i class="fa-fw fab fa-telegram"></i>
         </a>
@@ -8695,7 +8695,7 @@
     <div class="d-flex justify-content-between align-items-center text-muted ml-md-3 mr-md-3">
       <div class="footer-left">
         <p class="mb-0">
-          © 2023
+          © 2025
           <a href="https://twitter.com/username">Fanventory</a>.
           
           <span data-toggle="tooltip" data-placement="top"

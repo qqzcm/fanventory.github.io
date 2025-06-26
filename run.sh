@@ -1,7 +1,7 @@
 jekyll build --incremental
 echo "============>jekyll build"
 
-cp -r /e/笔记/image /e/笔记/myblog/_site/
+cp -r /e/note/image /e/note/myblog/_site/
 echo "============>xcopy"
 
 cd _site
@@ -13,7 +13,7 @@ echo "============>git add"
 git commit -m "update"
 echo "============>git commit"
 
-git push -u origin "master"
+git push -u upstream "master"
 echo "============>git push"
 
 

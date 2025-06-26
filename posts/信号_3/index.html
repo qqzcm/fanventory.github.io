@@ -35,13 +35,13 @@
 
   
     <!-- Begin Jekyll SEO tag v2.8.0 -->
-<meta name="generator" content="Jekyll v4.3.2" />
+<meta name="generator" content="Jekyll v4.4.1" />
 <meta property="og:title" content="读书笔记 —— 信号_3" />
 <meta property="og:locale" content="en" />
 <meta name="description" content="SIGHUP/SIGPIPE/SIGURG 本节介绍了三个关于网络编程的信号：SIGHUP信号一般是当一个进程的控制终端被挂起时触发，由于网络后台程序没有控制终端，所以常常用来强制服务器重读配置文件。SIGPIPE信号则是往一个读端关闭的管道或关闭的socket连接中写数据时触发，因为该信号的默认处理行为是关闭程序，所以我们必须处理该信号。SIGURG信号的作用是内核通知应用程序带外数据到达，我们可以通过该信号来检测带外数据。" />
 <meta property="og:description" content="SIGHUP/SIGPIPE/SIGURG 本节介绍了三个关于网络编程的信号：SIGHUP信号一般是当一个进程的控制终端被挂起时触发，由于网络后台程序没有控制终端，所以常常用来强制服务器重读配置文件。SIGPIPE信号则是往一个读端关闭的管道或关闭的socket连接中写数据时触发，因为该信号的默认处理行为是关闭程序，所以我们必须处理该信号。SIGURG信号的作用是内核通知应用程序带外数据到达，我们可以通过该信号来检测带外数据。" />
-<link rel="canonical" href="http://localhost:4000/posts/%E4%BF%A1%E5%8F%B7_3/" />
-<meta property="og:url" content="http://localhost:4000/posts/%E4%BF%A1%E5%8F%B7_3/" />
+<link rel="canonical" href="https://fanventory.github.io/posts/%E4%BF%A1%E5%8F%B7_3/" />
+<meta property="og:url" content="https://fanventory.github.io/posts/%E4%BF%A1%E5%8F%B7_3/" />
 <meta property="og:site_name" content="Fanventory" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2023-07-04T14:44:00+08:00" />
@@ -49,7 +49,7 @@
 <meta property="twitter:title" content="读书笔记 —— 信号_3" />
 <meta name="twitter:site" content="@Fanventory" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-07-04T14:44:00+08:00","datePublished":"2023-07-04T14:44:00+08:00","description":"SIGHUP/SIGPIPE/SIGURG 本节介绍了三个关于网络编程的信号：SIGHUP信号一般是当一个进程的控制终端被挂起时触发，由于网络后台程序没有控制终端，所以常常用来强制服务器重读配置文件。SIGPIPE信号则是往一个读端关闭的管道或关闭的socket连接中写数据时触发，因为该信号的默认处理行为是关闭程序，所以我们必须处理该信号。SIGURG信号的作用是内核通知应用程序带外数据到达，我们可以通过该信号来检测带外数据。","headline":"读书笔记 —— 信号_3","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/%E4%BF%A1%E5%8F%B7_3/"},"url":"http://localhost:4000/posts/%E4%BF%A1%E5%8F%B7_3/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-07-04T14:44:00+08:00","datePublished":"2023-07-04T14:44:00+08:00","description":"SIGHUP/SIGPIPE/SIGURG 本节介绍了三个关于网络编程的信号：SIGHUP信号一般是当一个进程的控制终端被挂起时触发，由于网络后台程序没有控制终端，所以常常用来强制服务器重读配置文件。SIGPIPE信号则是往一个读端关闭的管道或关闭的socket连接中写数据时触发，因为该信号的默认处理行为是关闭程序，所以我们必须处理该信号。SIGURG信号的作用是内核通知应用程序带外数据到达，我们可以通过该信号来检测带外数据。","headline":"读书笔记 —— 信号_3","mainEntityOfPage":{"@type":"WebPage","@id":"https://fanventory.github.io/posts/%E4%BF%A1%E5%8F%B7_3/"},"url":"https://fanventory.github.io/posts/%E4%BF%A1%E5%8F%B7_3/"}</script>
 <!-- End Jekyll SEO tag -->
 
   
@@ -981,19 +981,19 @@
 
     
       
-        <a href="https://twitter.com/intent/tweet?text=%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0+%E2%80%94%E2%80%94+%E4%BF%A1%E5%8F%B7_3+-+Fanventory&url=http%3A%2F%2Flocalhost%3A4000%2Fposts%2F%25E4%25BF%25A1%25E5%258F%25B7_3%2F" data-toggle="tooltip" data-placement="top"
+        <a href="https://twitter.com/intent/tweet?text=%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0+%E2%80%94%E2%80%94+%E4%BF%A1%E5%8F%B7_3+-+Fanventory&url=https%3A%2F%2Ffanventory.github.io%2Fposts%2F%25E4%25BF%25A1%25E5%258F%25B7_3%2F" data-toggle="tooltip" data-placement="top"
           title="Twitter" target="_blank" rel="noopener" aria-label="Twitter">
           <i class="fa-fw fab fa-twitter"></i>
         </a>
     
       
-        <a href="https://www.facebook.com/sharer/sharer.php?title=%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0+%E2%80%94%E2%80%94+%E4%BF%A1%E5%8F%B7_3+-+Fanventory&u=http%3A%2F%2Flocalhost%3A4000%2Fposts%2F%25E4%25BF%25A1%25E5%258F%25B7_3%2F" data-toggle="tooltip" data-placement="top"
+        <a href="https://www.facebook.com/sharer/sharer.php?title=%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0+%E2%80%94%E2%80%94+%E4%BF%A1%E5%8F%B7_3+-+Fanventory&u=https%3A%2F%2Ffanventory.github.io%2Fposts%2F%25E4%25BF%25A1%25E5%258F%25B7_3%2F" data-toggle="tooltip" data-placement="top"
           title="Facebook" target="_blank" rel="noopener" aria-label="Facebook">
           <i class="fa-fw fab fa-facebook-square"></i>
         </a>
     
       
-        <a href="https://t.me/share/url?url=http%3A%2F%2Flocalhost%3A4000%2Fposts%2F%25E4%25BF%25A1%25E5%258F%25B7_3%2F&text=%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0+%E2%80%94%E2%80%94+%E4%BF%A1%E5%8F%B7_3+-+Fanventory" data-toggle="tooltip" data-placement="top"
+        <a href="https://t.me/share/url?url=https%3A%2F%2Ffanventory.github.io%2Fposts%2F%25E4%25BF%25A1%25E5%258F%25B7_3%2F&text=%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0+%E2%80%94%E2%80%94+%E4%BF%A1%E5%8F%B7_3+-+Fanventory" data-toggle="tooltip" data-placement="top"
           title="Telegram" target="_blank" rel="noopener" aria-label="Telegram">
           <i class="fa-fw fab fa-telegram"></i>
         </a>
@@ -8142,7 +8142,7 @@ sockaddr
     <div class="d-flex justify-content-between align-items-center text-muted ml-md-3 mr-md-3">
       <div class="footer-left">
         <p class="mb-0">
-          © 2023
+          © 2025
           <a href="https://twitter.com/username">Fanventory</a>.
           
           <span data-toggle="tooltip" data-placement="top"

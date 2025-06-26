@@ -35,13 +35,13 @@
 
   
     <!-- Begin Jekyll SEO tag v2.8.0 -->
-<meta name="generator" content="Jekyll v4.3.2" />
+<meta name="generator" content="Jekyll v4.4.1" />
 <meta property="og:title" content="读书笔记 —— 信号_1" />
 <meta property="og:locale" content="en" />
 <meta name="description" content="信号/kill 本节初步介绍了信号。信号是由用户、系统或者进程发送给目标进程的信息，以通知目标进程某个状态的改变或系统异常。我们介绍了信号的来源。进程可以通过kill系统调用向其他进程发送信号，接收信号的进程需要定义一个接收函数来处理。Linux的可用信号都定义在bits/signum.h头文件中，我们列举了标准信号的值及其含义。最后信号可能会中断某些处于阻塞状态的系统调用，并设置errno为EINTR。" />
 <meta property="og:description" content="信号/kill 本节初步介绍了信号。信号是由用户、系统或者进程发送给目标进程的信息，以通知目标进程某个状态的改变或系统异常。我们介绍了信号的来源。进程可以通过kill系统调用向其他进程发送信号，接收信号的进程需要定义一个接收函数来处理。Linux的可用信号都定义在bits/signum.h头文件中，我们列举了标准信号的值及其含义。最后信号可能会中断某些处于阻塞状态的系统调用，并设置errno为EINTR。" />
-<link rel="canonical" href="http://localhost:4000/posts/%E4%BF%A1%E5%8F%B7_1/" />
-<meta property="og:url" content="http://localhost:4000/posts/%E4%BF%A1%E5%8F%B7_1/" />
+<link rel="canonical" href="https://fanventory.github.io/posts/%E4%BF%A1%E5%8F%B7_1/" />
+<meta property="og:url" content="https://fanventory.github.io/posts/%E4%BF%A1%E5%8F%B7_1/" />
 <meta property="og:site_name" content="Fanventory" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2023-06-28T20:20:00+08:00" />
@@ -49,7 +49,7 @@
 <meta property="twitter:title" content="读书笔记 —— 信号_1" />
 <meta name="twitter:site" content="@Fanventory" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-06-28T20:20:00+08:00","datePublished":"2023-06-28T20:20:00+08:00","description":"信号/kill 本节初步介绍了信号。信号是由用户、系统或者进程发送给目标进程的信息，以通知目标进程某个状态的改变或系统异常。我们介绍了信号的来源。进程可以通过kill系统调用向其他进程发送信号，接收信号的进程需要定义一个接收函数来处理。Linux的可用信号都定义在bits/signum.h头文件中，我们列举了标准信号的值及其含义。最后信号可能会中断某些处于阻塞状态的系统调用，并设置errno为EINTR。","headline":"读书笔记 —— 信号_1","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/%E4%BF%A1%E5%8F%B7_1/"},"url":"http://localhost:4000/posts/%E4%BF%A1%E5%8F%B7_1/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-06-28T20:20:00+08:00","datePublished":"2023-06-28T20:20:00+08:00","description":"信号/kill 本节初步介绍了信号。信号是由用户、系统或者进程发送给目标进程的信息，以通知目标进程某个状态的改变或系统异常。我们介绍了信号的来源。进程可以通过kill系统调用向其他进程发送信号，接收信号的进程需要定义一个接收函数来处理。Linux的可用信号都定义在bits/signum.h头文件中，我们列举了标准信号的值及其含义。最后信号可能会中断某些处于阻塞状态的系统调用，并设置errno为EINTR。","headline":"读书笔记 —— 信号_1","mainEntityOfPage":{"@type":"WebPage","@id":"https://fanventory.github.io/posts/%E4%BF%A1%E5%8F%B7_1/"},"url":"https://fanventory.github.io/posts/%E4%BF%A1%E5%8F%B7_1/"}</script>
 <!-- End Jekyll SEO tag -->
 
   
@@ -1158,19 +1158,19 @@
 
     
       
-        <a href="https://twitter.com/intent/tweet?text=%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0+%E2%80%94%E2%80%94+%E4%BF%A1%E5%8F%B7_1+-+Fanventory&url=http%3A%2F%2Flocalhost%3A4000%2Fposts%2F%25E4%25BF%25A1%25E5%258F%25B7_1%2F" data-toggle="tooltip" data-placement="top"
+        <a href="https://twitter.com/intent/tweet?text=%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0+%E2%80%94%E2%80%94+%E4%BF%A1%E5%8F%B7_1+-+Fanventory&url=https%3A%2F%2Ffanventory.github.io%2Fposts%2F%25E4%25BF%25A1%25E5%258F%25B7_1%2F" data-toggle="tooltip" data-placement="top"
           title="Twitter" target="_blank" rel="noopener" aria-label="Twitter">
           <i class="fa-fw fab fa-twitter"></i>
         </a>
     
       
-        <a href="https://www.facebook.com/sharer/sharer.php?title=%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0+%E2%80%94%E2%80%94+%E4%BF%A1%E5%8F%B7_1+-+Fanventory&u=http%3A%2F%2Flocalhost%3A4000%2Fposts%2F%25E4%25BF%25A1%25E5%258F%25B7_1%2F" data-toggle="tooltip" data-placement="top"
+        <a href="https://www.facebook.com/sharer/sharer.php?title=%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0+%E2%80%94%E2%80%94+%E4%BF%A1%E5%8F%B7_1+-+Fanventory&u=https%3A%2F%2Ffanventory.github.io%2Fposts%2F%25E4%25BF%25A1%25E5%258F%25B7_1%2F" data-toggle="tooltip" data-placement="top"
           title="Facebook" target="_blank" rel="noopener" aria-label="Facebook">
           <i class="fa-fw fab fa-facebook-square"></i>
         </a>
     
       
-        <a href="https://t.me/share/url?url=http%3A%2F%2Flocalhost%3A4000%2Fposts%2F%25E4%25BF%25A1%25E5%258F%25B7_1%2F&text=%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0+%E2%80%94%E2%80%94+%E4%BF%A1%E5%8F%B7_1+-+Fanventory" data-toggle="tooltip" data-placement="top"
+        <a href="https://t.me/share/url?url=https%3A%2F%2Ffanventory.github.io%2Fposts%2F%25E4%25BF%25A1%25E5%258F%25B7_1%2F&text=%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0+%E2%80%94%E2%80%94+%E4%BF%A1%E5%8F%B7_1+-+Fanventory" data-toggle="tooltip" data-placement="top"
           title="Telegram" target="_blank" rel="noopener" aria-label="Telegram">
           <i class="fa-fw fab fa-telegram"></i>
         </a>
@@ -8319,7 +8319,7 @@ sockaddr
     <div class="d-flex justify-content-between align-items-center text-muted ml-md-3 mr-md-3">
       <div class="footer-left">
         <p class="mb-0">
-          © 2023
+          © 2025
           <a href="https://twitter.com/username">Fanventory</a>.
           
           <span data-toggle="tooltip" data-placement="top"

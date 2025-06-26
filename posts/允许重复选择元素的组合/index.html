@@ -35,13 +35,13 @@
 
   
     <!-- Begin Jekyll SEO tag v2.8.0 -->
-<meta name="generator" content="Jekyll v4.3.2" />
+<meta name="generator" content="Jekyll v4.4.1" />
 <meta property="og:title" content="刷题笔记 —— 允许重复选择元素的组合" />
 <meta property="og:locale" content="en" />
 <meta name="description" content="回溯/动态规划 该问题是在数组中找出和等于target的子集，在组合问题的基础上增加了元素可重复选取的条件，可以用回溯法实现。这里我们给出用动态规划的另一种实现方式。" />
 <meta property="og:description" content="回溯/动态规划 该问题是在数组中找出和等于target的子集，在组合问题的基础上增加了元素可重复选取的条件，可以用回溯法实现。这里我们给出用动态规划的另一种实现方式。" />
-<link rel="canonical" href="http://localhost:4000/posts/%E5%85%81%E8%AE%B8%E9%87%8D%E5%A4%8D%E9%80%89%E6%8B%A9%E5%85%83%E7%B4%A0%E7%9A%84%E7%BB%84%E5%90%88/" />
-<meta property="og:url" content="http://localhost:4000/posts/%E5%85%81%E8%AE%B8%E9%87%8D%E5%A4%8D%E9%80%89%E6%8B%A9%E5%85%83%E7%B4%A0%E7%9A%84%E7%BB%84%E5%90%88/" />
+<link rel="canonical" href="https://fanventory.github.io/posts/%E5%85%81%E8%AE%B8%E9%87%8D%E5%A4%8D%E9%80%89%E6%8B%A9%E5%85%83%E7%B4%A0%E7%9A%84%E7%BB%84%E5%90%88/" />
+<meta property="og:url" content="https://fanventory.github.io/posts/%E5%85%81%E8%AE%B8%E9%87%8D%E5%A4%8D%E9%80%89%E6%8B%A9%E5%85%83%E7%B4%A0%E7%9A%84%E7%BB%84%E5%90%88/" />
 <meta property="og:site_name" content="Fanventory" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2023-04-18T20:28:00+08:00" />
@@ -49,7 +49,7 @@
 <meta property="twitter:title" content="刷题笔记 —— 允许重复选择元素的组合" />
 <meta name="twitter:site" content="@Fanventory" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-04-18T20:28:00+08:00","datePublished":"2023-04-18T20:28:00+08:00","description":"回溯/动态规划 该问题是在数组中找出和等于target的子集，在组合问题的基础上增加了元素可重复选取的条件，可以用回溯法实现。这里我们给出用动态规划的另一种实现方式。","headline":"刷题笔记 —— 允许重复选择元素的组合","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/%E5%85%81%E8%AE%B8%E9%87%8D%E5%A4%8D%E9%80%89%E6%8B%A9%E5%85%83%E7%B4%A0%E7%9A%84%E7%BB%84%E5%90%88/"},"url":"http://localhost:4000/posts/%E5%85%81%E8%AE%B8%E9%87%8D%E5%A4%8D%E9%80%89%E6%8B%A9%E5%85%83%E7%B4%A0%E7%9A%84%E7%BB%84%E5%90%88/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-04-18T20:28:00+08:00","datePublished":"2023-04-18T20:28:00+08:00","description":"回溯/动态规划 该问题是在数组中找出和等于target的子集，在组合问题的基础上增加了元素可重复选取的条件，可以用回溯法实现。这里我们给出用动态规划的另一种实现方式。","headline":"刷题笔记 —— 允许重复选择元素的组合","mainEntityOfPage":{"@type":"WebPage","@id":"https://fanventory.github.io/posts/%E5%85%81%E8%AE%B8%E9%87%8D%E5%A4%8D%E9%80%89%E6%8B%A9%E5%85%83%E7%B4%A0%E7%9A%84%E7%BB%84%E5%90%88/"},"url":"https://fanventory.github.io/posts/%E5%85%81%E8%AE%B8%E9%87%8D%E5%A4%8D%E9%80%89%E6%8B%A9%E5%85%83%E7%B4%A0%E7%9A%84%E7%BB%84%E5%90%88/"}</script>
 <!-- End Jekyll SEO tag -->
 
   
@@ -1378,19 +1378,19 @@ candidates 中的数字可以无限制重复被选取。如果至少一个所�
 
     
       
-        <a href="https://twitter.com/intent/tweet?text=%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0+%E2%80%94%E2%80%94+%E5%85%81%E8%AE%B8%E9%87%8D%E5%A4%8D%E9%80%89%E6%8B%A9%E5%85%83%E7%B4%A0%E7%9A%84%E7%BB%84%E5%90%88+-+Fanventory&url=http%3A%2F%2Flocalhost%3A4000%2Fposts%2F%25E5%2585%2581%25E8%25AE%25B8%25E9%2587%258D%25E5%25A4%258D%25E9%2580%2589%25E6%258B%25A9%25E5%2585%2583%25E7%25B4%25A0%25E7%259A%2584%25E7%25BB%2584%25E5%2590%2588%2F" data-toggle="tooltip" data-placement="top"
+        <a href="https://twitter.com/intent/tweet?text=%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0+%E2%80%94%E2%80%94+%E5%85%81%E8%AE%B8%E9%87%8D%E5%A4%8D%E9%80%89%E6%8B%A9%E5%85%83%E7%B4%A0%E7%9A%84%E7%BB%84%E5%90%88+-+Fanventory&url=https%3A%2F%2Ffanventory.github.io%2Fposts%2F%25E5%2585%2581%25E8%25AE%25B8%25E9%2587%258D%25E5%25A4%258D%25E9%2580%2589%25E6%258B%25A9%25E5%2585%2583%25E7%25B4%25A0%25E7%259A%2584%25E7%25BB%2584%25E5%2590%2588%2F" data-toggle="tooltip" data-placement="top"
           title="Twitter" target="_blank" rel="noopener" aria-label="Twitter">
           <i class="fa-fw fab fa-twitter"></i>
         </a>
     
       
-        <a href="https://www.facebook.com/sharer/sharer.php?title=%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0+%E2%80%94%E2%80%94+%E5%85%81%E8%AE%B8%E9%87%8D%E5%A4%8D%E9%80%89%E6%8B%A9%E5%85%83%E7%B4%A0%E7%9A%84%E7%BB%84%E5%90%88+-+Fanventory&u=http%3A%2F%2Flocalhost%3A4000%2Fposts%2F%25E5%2585%2581%25E8%25AE%25B8%25E9%2587%258D%25E5%25A4%258D%25E9%2580%2589%25E6%258B%25A9%25E5%2585%2583%25E7%25B4%25A0%25E7%259A%2584%25E7%25BB%2584%25E5%2590%2588%2F" data-toggle="tooltip" data-placement="top"
+        <a href="https://www.facebook.com/sharer/sharer.php?title=%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0+%E2%80%94%E2%80%94+%E5%85%81%E8%AE%B8%E9%87%8D%E5%A4%8D%E9%80%89%E6%8B%A9%E5%85%83%E7%B4%A0%E7%9A%84%E7%BB%84%E5%90%88+-+Fanventory&u=https%3A%2F%2Ffanventory.github.io%2Fposts%2F%25E5%2585%2581%25E8%25AE%25B8%25E9%2587%258D%25E5%25A4%258D%25E9%2580%2589%25E6%258B%25A9%25E5%2585%2583%25E7%25B4%25A0%25E7%259A%2584%25E7%25BB%2584%25E5%2590%2588%2F" data-toggle="tooltip" data-placement="top"
           title="Facebook" target="_blank" rel="noopener" aria-label="Facebook">
           <i class="fa-fw fab fa-facebook-square"></i>
         </a>
     
       
-        <a href="https://t.me/share/url?url=http%3A%2F%2Flocalhost%3A4000%2Fposts%2F%25E5%2585%2581%25E8%25AE%25B8%25E9%2587%258D%25E5%25A4%258D%25E9%2580%2589%25E6%258B%25A9%25E5%2585%2583%25E7%25B4%25A0%25E7%259A%2584%25E7%25BB%2584%25E5%2590%2588%2F&text=%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0+%E2%80%94%E2%80%94+%E5%85%81%E8%AE%B8%E9%87%8D%E5%A4%8D%E9%80%89%E6%8B%A9%E5%85%83%E7%B4%A0%E7%9A%84%E7%BB%84%E5%90%88+-+Fanventory" data-toggle="tooltip" data-placement="top"
+        <a href="https://t.me/share/url?url=https%3A%2F%2Ffanventory.github.io%2Fposts%2F%25E5%2585%2581%25E8%25AE%25B8%25E9%2587%258D%25E5%25A4%258D%25E9%2580%2589%25E6%258B%25A9%25E5%2585%2583%25E7%25B4%25A0%25E7%259A%2584%25E7%25BB%2584%25E5%2590%2588%2F&text=%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0+%E2%80%94%E2%80%94+%E5%85%81%E8%AE%B8%E9%87%8D%E5%A4%8D%E9%80%89%E6%8B%A9%E5%85%83%E7%B4%A0%E7%9A%84%E7%BB%84%E5%90%88+-+Fanventory" data-toggle="tooltip" data-placement="top"
           title="Telegram" target="_blank" rel="noopener" aria-label="Telegram">
           <i class="fa-fw fab fa-telegram"></i>
         </a>
@@ -8557,7 +8557,7 @@ candidates 中的数字可以无限制重复被选取。如果至少一个所�
     <div class="d-flex justify-content-between align-items-center text-muted ml-md-3 mr-md-3">
       <div class="footer-left">
         <p class="mb-0">
-          © 2023
+          © 2025
           <a href="https://twitter.com/username">Fanventory</a>.
           
           <span data-toggle="tooltip" data-placement="top"

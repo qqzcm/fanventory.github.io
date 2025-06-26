@@ -35,13 +35,13 @@
 
   
     <!-- Begin Jekyll SEO tag v2.8.0 -->
-<meta name="generator" content="Jekyll v4.3.2" />
+<meta name="generator" content="Jekyll v4.4.1" />
 <meta property="og:title" content="读书笔记 —— 多线程编程_1" />
 <meta property="og:locale" content="en" />
 <meta name="description" content="线程模型/线程库 本节简单介绍了关于线程的一些知识。线程是程序完成一个独立任务的完整执行序列，即一个可调度的实体。线程分为内核线程和用户线程，内核线程是内核调度的，用户线程是运行在用户空间，由线程库调度的。早期内核对线程的支持还不完备，所以早期的线程库LinuxPthreads通过进程模拟线程的方式来实现，并且引入管理线程机制来对工作线程进行管理，但这种方式容易引起语义问题，也不能利用多处理器的优势。随着内核完善，NPTL线程库应运而生，由内核负责线程的创建、结束、调度以及堆栈回收，效率更高，而且能有效利用多处理器的资源。" />
 <meta property="og:description" content="线程模型/线程库 本节简单介绍了关于线程的一些知识。线程是程序完成一个独立任务的完整执行序列，即一个可调度的实体。线程分为内核线程和用户线程，内核线程是内核调度的，用户线程是运行在用户空间，由线程库调度的。早期内核对线程的支持还不完备，所以早期的线程库LinuxPthreads通过进程模拟线程的方式来实现，并且引入管理线程机制来对工作线程进行管理，但这种方式容易引起语义问题，也不能利用多处理器的优势。随着内核完善，NPTL线程库应运而生，由内核负责线程的创建、结束、调度以及堆栈回收，效率更高，而且能有效利用多处理器的资源。" />
-<link rel="canonical" href="http://localhost:4000/posts/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E7%BC%96%E7%A8%8B_1/" />
-<meta property="og:url" content="http://localhost:4000/posts/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E7%BC%96%E7%A8%8B_1/" />
+<link rel="canonical" href="https://fanventory.github.io/posts/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E7%BC%96%E7%A8%8B_1/" />
+<meta property="og:url" content="https://fanventory.github.io/posts/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E7%BC%96%E7%A8%8B_1/" />
 <meta property="og:site_name" content="Fanventory" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2023-07-12T10:25:00+08:00" />
@@ -49,7 +49,7 @@
 <meta property="twitter:title" content="读书笔记 —— 多线程编程_1" />
 <meta name="twitter:site" content="@Fanventory" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-07-12T10:25:00+08:00","datePublished":"2023-07-12T10:25:00+08:00","description":"线程模型/线程库 本节简单介绍了关于线程的一些知识。线程是程序完成一个独立任务的完整执行序列，即一个可调度的实体。线程分为内核线程和用户线程，内核线程是内核调度的，用户线程是运行在用户空间，由线程库调度的。早期内核对线程的支持还不完备，所以早期的线程库LinuxPthreads通过进程模拟线程的方式来实现，并且引入管理线程机制来对工作线程进行管理，但这种方式容易引起语义问题，也不能利用多处理器的优势。随着内核完善，NPTL线程库应运而生，由内核负责线程的创建、结束、调度以及堆栈回收，效率更高，而且能有效利用多处理器的资源。","headline":"读书笔记 —— 多线程编程_1","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E7%BC%96%E7%A8%8B_1/"},"url":"http://localhost:4000/posts/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E7%BC%96%E7%A8%8B_1/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-07-12T10:25:00+08:00","datePublished":"2023-07-12T10:25:00+08:00","description":"线程模型/线程库 本节简单介绍了关于线程的一些知识。线程是程序完成一个独立任务的完整执行序列，即一个可调度的实体。线程分为内核线程和用户线程，内核线程是内核调度的，用户线程是运行在用户空间，由线程库调度的。早期内核对线程的支持还不完备，所以早期的线程库LinuxPthreads通过进程模拟线程的方式来实现，并且引入管理线程机制来对工作线程进行管理，但这种方式容易引起语义问题，也不能利用多处理器的优势。随着内核完善，NPTL线程库应运而生，由内核负责线程的创建、结束、调度以及堆栈回收，效率更高，而且能有效利用多处理器的资源。","headline":"读书笔记 —— 多线程编程_1","mainEntityOfPage":{"@type":"WebPage","@id":"https://fanventory.github.io/posts/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E7%BC%96%E7%A8%8B_1/"},"url":"https://fanventory.github.io/posts/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E7%BC%96%E7%A8%8B_1/"}</script>
 <!-- End Jekyll SEO tag -->
 
   
@@ -876,19 +876,19 @@ NPTL 2.27
 
     
       
-        <a href="https://twitter.com/intent/tweet?text=%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0+%E2%80%94%E2%80%94+%E5%A4%9A%E7%BA%BF%E7%A8%8B%E7%BC%96%E7%A8%8B_1+-+Fanventory&url=http%3A%2F%2Flocalhost%3A4000%2Fposts%2F%25E5%25A4%259A%25E7%25BA%25BF%25E7%25A8%258B%25E7%25BC%2596%25E7%25A8%258B_1%2F" data-toggle="tooltip" data-placement="top"
+        <a href="https://twitter.com/intent/tweet?text=%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0+%E2%80%94%E2%80%94+%E5%A4%9A%E7%BA%BF%E7%A8%8B%E7%BC%96%E7%A8%8B_1+-+Fanventory&url=https%3A%2F%2Ffanventory.github.io%2Fposts%2F%25E5%25A4%259A%25E7%25BA%25BF%25E7%25A8%258B%25E7%25BC%2596%25E7%25A8%258B_1%2F" data-toggle="tooltip" data-placement="top"
           title="Twitter" target="_blank" rel="noopener" aria-label="Twitter">
           <i class="fa-fw fab fa-twitter"></i>
         </a>
     
       
-        <a href="https://www.facebook.com/sharer/sharer.php?title=%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0+%E2%80%94%E2%80%94+%E5%A4%9A%E7%BA%BF%E7%A8%8B%E7%BC%96%E7%A8%8B_1+-+Fanventory&u=http%3A%2F%2Flocalhost%3A4000%2Fposts%2F%25E5%25A4%259A%25E7%25BA%25BF%25E7%25A8%258B%25E7%25BC%2596%25E7%25A8%258B_1%2F" data-toggle="tooltip" data-placement="top"
+        <a href="https://www.facebook.com/sharer/sharer.php?title=%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0+%E2%80%94%E2%80%94+%E5%A4%9A%E7%BA%BF%E7%A8%8B%E7%BC%96%E7%A8%8B_1+-+Fanventory&u=https%3A%2F%2Ffanventory.github.io%2Fposts%2F%25E5%25A4%259A%25E7%25BA%25BF%25E7%25A8%258B%25E7%25BC%2596%25E7%25A8%258B_1%2F" data-toggle="tooltip" data-placement="top"
           title="Facebook" target="_blank" rel="noopener" aria-label="Facebook">
           <i class="fa-fw fab fa-facebook-square"></i>
         </a>
     
       
-        <a href="https://t.me/share/url?url=http%3A%2F%2Flocalhost%3A4000%2Fposts%2F%25E5%25A4%259A%25E7%25BA%25BF%25E7%25A8%258B%25E7%25BC%2596%25E7%25A8%258B_1%2F&text=%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0+%E2%80%94%E2%80%94+%E5%A4%9A%E7%BA%BF%E7%A8%8B%E7%BC%96%E7%A8%8B_1+-+Fanventory" data-toggle="tooltip" data-placement="top"
+        <a href="https://t.me/share/url?url=https%3A%2F%2Ffanventory.github.io%2Fposts%2F%25E5%25A4%259A%25E7%25BA%25BF%25E7%25A8%258B%25E7%25BC%2596%25E7%25A8%258B_1%2F&text=%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0+%E2%80%94%E2%80%94+%E5%A4%9A%E7%BA%BF%E7%A8%8B%E7%BC%96%E7%A8%8B_1+-+Fanventory" data-toggle="tooltip" data-placement="top"
           title="Telegram" target="_blank" rel="noopener" aria-label="Telegram">
           <i class="fa-fw fab fa-telegram"></i>
         </a>
@@ -8059,7 +8059,7 @@ sem_init
     <div class="d-flex justify-content-between align-items-center text-muted ml-md-3 mr-md-3">
       <div class="footer-left">
         <p class="mb-0">
-          © 2023
+          © 2025
           <a href="https://twitter.com/username">Fanventory</a>.
           
           <span data-toggle="tooltip" data-placement="top"

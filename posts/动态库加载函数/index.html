@@ -35,13 +35,13 @@
 
   
     <!-- Begin Jekyll SEO tag v2.8.0 -->
-<meta name="generator" content="Jekyll v4.3.2" />
+<meta name="generator" content="Jekyll v4.4.1" />
 <meta property="og:title" content="C++ —— 动态库加载函数" />
 <meta property="og:locale" content="en" />
 <meta name="description" content="dlsym/dlopen 在实际开发中我们有这样一些需求：为系统调用设置钩子函数。所以我们需要重写系统调用，而且为了避免大量修改代码，修改后的钩子函数需要和原来的系统调用重名。为了解决原来的系统调用符号丢失的问题，dlsym函数可以从动态库中获取符号地址，然后利用这些符号地址实现原来系统调用的功能。对于自定义的动态库，可以利用dlopen函数先加载自定义动态库，再利用dlsym函数获取符号地址。" />
 <meta property="og:description" content="dlsym/dlopen 在实际开发中我们有这样一些需求：为系统调用设置钩子函数。所以我们需要重写系统调用，而且为了避免大量修改代码，修改后的钩子函数需要和原来的系统调用重名。为了解决原来的系统调用符号丢失的问题，dlsym函数可以从动态库中获取符号地址，然后利用这些符号地址实现原来系统调用的功能。对于自定义的动态库，可以利用dlopen函数先加载自定义动态库，再利用dlsym函数获取符号地址。" />
-<link rel="canonical" href="http://localhost:4000/posts/%E5%8A%A8%E6%80%81%E5%BA%93%E5%8A%A0%E8%BD%BD%E5%87%BD%E6%95%B0/" />
-<meta property="og:url" content="http://localhost:4000/posts/%E5%8A%A8%E6%80%81%E5%BA%93%E5%8A%A0%E8%BD%BD%E5%87%BD%E6%95%B0/" />
+<link rel="canonical" href="https://fanventory.github.io/posts/%E5%8A%A8%E6%80%81%E5%BA%93%E5%8A%A0%E8%BD%BD%E5%87%BD%E6%95%B0/" />
+<meta property="og:url" content="https://fanventory.github.io/posts/%E5%8A%A8%E6%80%81%E5%BA%93%E5%8A%A0%E8%BD%BD%E5%87%BD%E6%95%B0/" />
 <meta property="og:site_name" content="Fanventory" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2023-08-03T21:18:00+08:00" />
@@ -49,7 +49,7 @@
 <meta property="twitter:title" content="C++ —— 动态库加载函数" />
 <meta name="twitter:site" content="@Fanventory" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-08-03T21:18:00+08:00","datePublished":"2023-08-03T21:18:00+08:00","description":"dlsym/dlopen 在实际开发中我们有这样一些需求：为系统调用设置钩子函数。所以我们需要重写系统调用，而且为了避免大量修改代码，修改后的钩子函数需要和原来的系统调用重名。为了解决原来的系统调用符号丢失的问题，dlsym函数可以从动态库中获取符号地址，然后利用这些符号地址实现原来系统调用的功能。对于自定义的动态库，可以利用dlopen函数先加载自定义动态库，再利用dlsym函数获取符号地址。","headline":"C++ —— 动态库加载函数","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/%E5%8A%A8%E6%80%81%E5%BA%93%E5%8A%A0%E8%BD%BD%E5%87%BD%E6%95%B0/"},"url":"http://localhost:4000/posts/%E5%8A%A8%E6%80%81%E5%BA%93%E5%8A%A0%E8%BD%BD%E5%87%BD%E6%95%B0/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-08-03T21:18:00+08:00","datePublished":"2023-08-03T21:18:00+08:00","description":"dlsym/dlopen 在实际开发中我们有这样一些需求：为系统调用设置钩子函数。所以我们需要重写系统调用，而且为了避免大量修改代码，修改后的钩子函数需要和原来的系统调用重名。为了解决原来的系统调用符号丢失的问题，dlsym函数可以从动态库中获取符号地址，然后利用这些符号地址实现原来系统调用的功能。对于自定义的动态库，可以利用dlopen函数先加载自定义动态库，再利用dlsym函数获取符号地址。","headline":"C++ —— 动态库加载函数","mainEntityOfPage":{"@type":"WebPage","@id":"https://fanventory.github.io/posts/%E5%8A%A8%E6%80%81%E5%BA%93%E5%8A%A0%E8%BD%BD%E5%87%BD%E6%95%B0/"},"url":"https://fanventory.github.io/posts/%E5%8A%A8%E6%80%81%E5%BA%93%E5%8A%A0%E8%BD%BD%E5%87%BD%E6%95%B0/"}</script>
 <!-- End Jekyll SEO tag -->
 
   
@@ -1162,19 +1162,19 @@ $ nm hello.o
 
     
       
-        <a href="https://twitter.com/intent/tweet?text=C%2B%2B+%E2%80%94%E2%80%94+%E5%8A%A8%E6%80%81%E5%BA%93%E5%8A%A0%E8%BD%BD%E5%87%BD%E6%95%B0+-+Fanventory&url=http%3A%2F%2Flocalhost%3A4000%2Fposts%2F%25E5%258A%25A8%25E6%2580%2581%25E5%25BA%2593%25E5%258A%25A0%25E8%25BD%25BD%25E5%2587%25BD%25E6%2595%25B0%2F" data-toggle="tooltip" data-placement="top"
+        <a href="https://twitter.com/intent/tweet?text=C%2B%2B+%E2%80%94%E2%80%94+%E5%8A%A8%E6%80%81%E5%BA%93%E5%8A%A0%E8%BD%BD%E5%87%BD%E6%95%B0+-+Fanventory&url=https%3A%2F%2Ffanventory.github.io%2Fposts%2F%25E5%258A%25A8%25E6%2580%2581%25E5%25BA%2593%25E5%258A%25A0%25E8%25BD%25BD%25E5%2587%25BD%25E6%2595%25B0%2F" data-toggle="tooltip" data-placement="top"
           title="Twitter" target="_blank" rel="noopener" aria-label="Twitter">
           <i class="fa-fw fab fa-twitter"></i>
         </a>
     
       
-        <a href="https://www.facebook.com/sharer/sharer.php?title=C%2B%2B+%E2%80%94%E2%80%94+%E5%8A%A8%E6%80%81%E5%BA%93%E5%8A%A0%E8%BD%BD%E5%87%BD%E6%95%B0+-+Fanventory&u=http%3A%2F%2Flocalhost%3A4000%2Fposts%2F%25E5%258A%25A8%25E6%2580%2581%25E5%25BA%2593%25E5%258A%25A0%25E8%25BD%25BD%25E5%2587%25BD%25E6%2595%25B0%2F" data-toggle="tooltip" data-placement="top"
+        <a href="https://www.facebook.com/sharer/sharer.php?title=C%2B%2B+%E2%80%94%E2%80%94+%E5%8A%A8%E6%80%81%E5%BA%93%E5%8A%A0%E8%BD%BD%E5%87%BD%E6%95%B0+-+Fanventory&u=https%3A%2F%2Ffanventory.github.io%2Fposts%2F%25E5%258A%25A8%25E6%2580%2581%25E5%25BA%2593%25E5%258A%25A0%25E8%25BD%25BD%25E5%2587%25BD%25E6%2595%25B0%2F" data-toggle="tooltip" data-placement="top"
           title="Facebook" target="_blank" rel="noopener" aria-label="Facebook">
           <i class="fa-fw fab fa-facebook-square"></i>
         </a>
     
       
-        <a href="https://t.me/share/url?url=http%3A%2F%2Flocalhost%3A4000%2Fposts%2F%25E5%258A%25A8%25E6%2580%2581%25E5%25BA%2593%25E5%258A%25A0%25E8%25BD%25BD%25E5%2587%25BD%25E6%2595%25B0%2F&text=C%2B%2B+%E2%80%94%E2%80%94+%E5%8A%A8%E6%80%81%E5%BA%93%E5%8A%A0%E8%BD%BD%E5%87%BD%E6%95%B0+-+Fanventory" data-toggle="tooltip" data-placement="top"
+        <a href="https://t.me/share/url?url=https%3A%2F%2Ffanventory.github.io%2Fposts%2F%25E5%258A%25A8%25E6%2580%2581%25E5%25BA%2593%25E5%258A%25A0%25E8%25BD%25BD%25E5%2587%25BD%25E6%2595%25B0%2F&text=C%2B%2B+%E2%80%94%E2%80%94+%E5%8A%A8%E6%80%81%E5%BA%93%E5%8A%A0%E8%BD%BD%E5%87%BD%E6%95%B0+-+Fanventory" data-toggle="tooltip" data-placement="top"
           title="Telegram" target="_blank" rel="noopener" aria-label="Telegram">
           <i class="fa-fw fab fa-telegram"></i>
         </a>
@@ -5515,7 +5515,7 @@ extern int optind,      // ...
       
       
       <div class="card">
-        <a href="/posts/__VA_ARGS__%E7%94%A8%E6%B3%95/">
+        <a href="/posts/VA_ARGS%E7%94%A8%E6%B3%95/">
           <div class="card-body">
             <!--
   Date format snippet
@@ -5533,7 +5533,7 @@ extern int optind,      // ...
   Mar 20, 2023
 </em>
 
-            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>C++ —— __VA_ARGS__用法</h3>
+            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>C++ —— VA_ARGS用法</h3>
             <div class="text-muted small">
               <p>
                 
@@ -8343,7 +8343,7 @@ __VA_ARGS__的用法...
     <div class="d-flex justify-content-between align-items-center text-muted ml-md-3 mr-md-3">
       <div class="footer-left">
         <p class="mb-0">
-          © 2023
+          © 2025
           <a href="https://twitter.com/username">Fanventory</a>.
           
           <span data-toggle="tooltip" data-placement="top"
